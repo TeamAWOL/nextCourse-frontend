@@ -1,4 +1,5 @@
 import decode from 'jwt-decode';
+
 export default class AuthService {
     constructor(domain) {
         this.domain = domain || 'http://localhost:3000' // We can pass in the backend server, or use a default for dev
@@ -6,6 +7,21 @@ export default class AuthService {
         this.login = this.login.bind(this)
         this.getUserId = this.getUserId.bind(this)
     }
+
+    get_next_course(searchParam) {
+      return this.fetch(`${this.domain}/get_next_course`, { // Our backend endpoint
+        method: 'GET',
+        body: JSON.stringify({
+          param: { // We pass in yelp searchParam to
+             searchParam
+          }
+        })
+      }).then(res => {
+        this.setToken(res.jwt)
+        return Promise.resolve(res);
+      })
+    }
+
 
     login(email, password) {
       return this.fetch(`${this.domain}/login_token`, { // Our backend endpoint
@@ -21,6 +37,7 @@ export default class AuthService {
         return Promise.resolve(res);
       })
     }
+
 
     create(first_name,last_name,email, zipcode,dob,password) {
       return this.fetch(`${this.domain}/users`, { // Our backend endpoint
