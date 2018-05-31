@@ -27,6 +27,7 @@ class Login extends Component {
 
   render() {
     return (
+      
       <div className="center">
         <div className="card">
           <h1>Login</h1>

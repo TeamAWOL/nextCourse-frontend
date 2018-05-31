@@ -1,13 +1,13 @@
 .center{
-  background-color: #7ac143;
+  background-image:url(../images/Salmon-NextCourse.jpg);
   position: absolute;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
 }
-
 .card{
   background-color: #fff;
   border-radius: 15px;
