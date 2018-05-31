@@ -1,7 +1,6 @@
 import React, { Component, Form, FormInput } from 'react';
 import '../css/CreateGroup.css';
 import AuthService from '../api/AuthService';
-import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
 class CreateGroup extends Component {
@@ -15,7 +14,8 @@ class CreateGroup extends Component {
       member_user_names: '',
       location:'',
       rating: 1,
-      inputs: ['input-0']
+      friends: [''],
+      newname: ''
     }
   }
 
@@ -40,6 +40,13 @@ class CreateGroup extends Component {
     .catch(err =>{ alert(err) })
   }
 
+  // add friend function, that pushes a new name to the friends array
+  addFriend(event) {
+      let {friends, newname} = this.state
+      friends.push(newname)
+      this.setState({friends: friends})
+  }
+
   render() {
     const { rating } = this.state
 
@@ -50,6 +57,7 @@ class CreateGroup extends Component {
           <form
             onSubmit={this.handleFormSubmit.bind(this)}
           >
+        <br/>
 
           <input
             className="form-item"
@@ -69,15 +77,23 @@ class CreateGroup extends Component {
                   onStarClick={this.onStarClick.bind(this)}
               />
           </div>
+          <br/>
 
-          <input
-              className="form-item"
-              placeholder="Add Friends"
-              name="member_user_names"
+          <div>
+              <form>
+                  <div id="dynamicInput">
+                      {this.state.friends.map(input => <form> {input} </form>)}
+                  </div>
+              </form>
+
+              <input className="form-item"
+              placeholder="Add Friend"
+              name="group_name"
               type="text"
-              onChange={this.handleChange.bind(this)}
+              />
 
-          />
+              <button onClick={this.addFriend.bind(this)}>Add More</button>
+          </div>
 
           <input
               className="form-item"
@@ -89,20 +105,13 @@ class CreateGroup extends Component {
           />
 
           </form>
+
           <input
               className="form-submit"
               value="Submit"
               type="submit"
           />
-        </div>
 
-        <div>
-            <Form>
-                <div id="dynamicInput">
-                    {this.state.inputs.map(input => <FormInput key={input} />)}
-                </div>
-            </Form>
-            <button onClick={ () => this.appendInput() }>Add Another Friend</button>
         </div>
 
       </div>
