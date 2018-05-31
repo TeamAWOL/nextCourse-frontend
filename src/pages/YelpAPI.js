@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import '../css/Login.css';
-import AuthService from '../services/AuthService';
+import {get_next_course} from '../api';
+import WithAuth from '../api/WithAuth';
 
-class Login extends Component {
+class Yelp extends Component {
   constructor(){
     super()
-    this.Auth = new AuthService()
     this.state={
-      email: '',
-      password: ''
+      type: '',
+      location: ''
     }
   }
 
@@ -18,7 +17,7 @@ class Login extends Component {
 
   handleFormSubmit(e){
     e.preventDefault()
-    this.Auth.login(this.state.email,this.state.password)
+    get_next_course(this.state.type,this.state.location)
     .then(res =>{
       this.props.history.replace('/')
     })
@@ -29,34 +28,33 @@ class Login extends Component {
     return (
       <div className="center">
         <div className="card">
-          <h1>Login</h1>
+          <h1>Getting the restuant by yelp</h1>
           <form
             onSubmit={this.handleFormSubmit.bind(this)}
           >
             <input
               className="form-item"
-              placeholder="email goes here..."
-              name="email"
+              placeholder="Search Param..."
+              name="type"
               type="text"
               onChange={this.handleChange.bind(this)}
               value={this.state.email}
             />
             <input
               className="form-item"
-              placeholder="Password goes here..."
-              name="password"
-              type="password"
+              placeholder="Search Param..."
+              name="location"
+              type="text"
               onChange={this.handleChange.bind(this)}
-              value={this.state.password}
+              value={this.state.email}
             />
             <input
               className="form-submit"
-              value="SUBMIT"
+              value="Get Yelp"
               type="submit"
             />
           </form>
-
-           <a href="/sign_up"> Sign up</a><br />
+          <a href="/sign_up"> Sign up</a><br />
         </div>
 
       </div>
@@ -64,4 +62,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default WithAuth(Yelp);
