@@ -5,8 +5,8 @@ import StarRatingComponent from 'react-star-rating-component';
 
 class CreateGroup extends Component {
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.Auth = new AuthService()
     this.state={
       group_name: '',
@@ -14,8 +14,8 @@ class CreateGroup extends Component {
       member_user_names: '',
       location:'',
       rating: 1,
-      friends: [''],
-      newname: ''
+      friends: [],
+      newfriend: ''
     }
   }
 
@@ -27,6 +27,7 @@ class CreateGroup extends Component {
   handleChange(e){
     this.setState({ [e.target.name]: e.target.value })
   }
+
 
   handleFormSubmit(e){
     e.preventDefault()
@@ -40,10 +41,26 @@ class CreateGroup extends Component {
     .catch(err =>{ alert(err) })
   }
 
-  // add friend function, that pushes a new name to the friends array
+
+  handleNewFriendInput(event) {
+      console.log(event.target.value);
+      let {newfriend} = this.state
+      newfriend = event.target.value
+      this.setState({newfriend: newfriend})
+  }
+
+  //pushes a new friend to the friends array
   addFriend(event) {
-      let {friends, newname} = this.state
-      friends.push(newname)
+      let {friends, newfriend} = this.state
+      friends.push(newfriend)
+      this.setState({friends: friends})
+  }
+
+  removeFriend(index) {
+      console.log(index);
+      let {friends} = this.state
+      friends.splice(index, 1)
+      console.log(friends);
       this.setState({friends: friends})
   }
 
@@ -68,7 +85,7 @@ class CreateGroup extends Component {
           />
 
           <div>
-              <p>Price Range: {rating}</p>
+              <p>Price Range: </p>
               <StarRatingComponent
                   name="price"
                   renderStarIcon={() => <span>$</span>}
@@ -80,16 +97,17 @@ class CreateGroup extends Component {
           <br/>
 
           <div>
-              <form>
-                  <div id="dynamicInput">
-                      {this.state.friends.map(input => <form> {input} </form>)}
-                  </div>
-              </form>
+              <div id="dynamicInput">
+                  {this.state.friends.map((input, index )=>  <li className="friend-tile" onClick={this.removeFriend.bind(this, index)}>{input}</li> )}
 
-              <input className="form-item"
+              </div>
+
+          <input className="form-item"
+              placeholder="Friend"
+              name="newfriend"
               placeholder="Add Friend"
-              name="group_name"
               type="text"
+              onChange={this.handleNewFriendInput.bind(this)}
               />
 
               <button onClick={this.addFriend.bind(this)}>Add More</button>
@@ -101,16 +119,15 @@ class CreateGroup extends Component {
               name="location"
               type="text"
               onChange={this.handleChange.bind(this)}
-
           />
-
-          </form>
 
           <input
               className="form-submit"
               value="Submit"
               type="submit"
           />
+
+          </form>
 
         </div>
 
