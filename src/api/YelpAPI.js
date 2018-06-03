@@ -1,8 +1,8 @@
-import AuthService from './AuthService'
-
 const BASE = 'http://localhost:3000'
 
-let get_next_course = function(type,location) {
+
+// YELP API CALLS
+let get_next_course = function(type,location,price) {
 	return fetch(BASE + '/get_next_course', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json'},
@@ -10,6 +10,7 @@ let get_next_course = function(type,location) {
 		  filter: { // We pass in yelp searchParam to
 			 type,
 			 location,
+			 price
 		  }
 	  })
 	   }).then((r) => {
@@ -20,8 +21,7 @@ let get_next_course = function(type,location) {
 
 }
 
-
-
 export  {
-	get_next_course ,
+					 get_next_course
+
 }
