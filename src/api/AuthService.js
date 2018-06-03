@@ -8,6 +8,7 @@ export default class AuthService {
         this.getUserId = this.getUserId.bind(this)
     }
 
+
     login(email, password) {
       return this.fetch(`${this.domain}/login_token`, { // Our backend endpoint
         method: 'POST',
@@ -18,6 +19,7 @@ export default class AuthService {
           }
         })
       }).then(res => {
+        console.log(res);
         this.setToken(res.jwt)
         return Promise.resolve(res);
       })
