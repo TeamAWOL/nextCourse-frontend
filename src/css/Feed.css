@@ -1,0 +1,44 @@
+#feed-page {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: steelblue;
+}
+
+#feed-page h1{
+  font-size: 55px;
+}
+
+#account-info {
+  font-size: 80px;
+}
+
+#groups-area {
+  background-color: #F1F1F1;
+}
+
+#groups-area span {
+font-size: 25px;
+}
+
+#recents-area {
+  background-color: #F1F1F1;
+}
+
+.green {
+  color: #40bf40;
+}
+#addGroup {
+  padding: 0;
+  margin: 0;
+  font-size: 30px;
+}
+
+th {
+  font-size: 30px;
+  text-align: center;
+}
+
+td {
+  font-size: 20px;
+}
