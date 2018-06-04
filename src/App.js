@@ -4,17 +4,20 @@ import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-do
 import Login from './pages/Login'
 import Sign_up from './pages/Sign_up'
 import Yelp from './pages/YelpAPITest'
+import Feed from './pages/Feed'
+import Header from './components/Header'
 
 class App extends Component {
   render() {
   return (
     <div>
-    <h1>NEXT COURSE</h1>
+      <Header />
       <Router>
         <Switch>
           <Route exact path="/login" component={Login}/>} />
           <Route exact path="/sign_up" component={Sign_up}/>} />
           <Route exact path="/yelp" component={Yelp}/>} />
+          <Route exact path="/feed" component={Feed}/>} />
           <Route exact path="/" render={() => (<Redirect to="/login"/>)}/>
         </Switch>
       </Router>
