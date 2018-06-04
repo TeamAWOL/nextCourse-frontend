@@ -1,37 +1,56 @@
 import React, { Component } from "react";
 import { Form, Text } from 'react-form';
-import '../css/CreateGroup.css';
+import '../css/AddFriend.css';
 
 class AddFriend extends Component {
     constructor(props) {
         super(props)
         this.state={}
     }
+
     render() {
         return (
             <div>
               <Form
                 onSubmit={submittedValues => this.setState( { submittedValues } )}>
                 { formApi => (
-                  <div>
-                    <button
-                      onClick={() => formApi.addValue('siblings', '')}
-                      type="button"
-                      className="mb-4 mr-4 btn btn-success">Add Friend</button>
-                    <form onSubmit={formApi.submitForm} id="dynamic-form">
-                      <label htmlFor="dynamic-first">First name</label>
-                      <Text field="firstName" id="dynamic-first" />
-                      { formApi.values.siblings && formApi.values.siblings.map( ( sibling, i ) => (
-                        <div key={`sibling${i}`}>
-                          <label htmlFor={`sibling-name-${i}`}>Name</label>
-                          <Text field={['siblings', i]} id={`sibling-name-${i}`} />
-                          <button
-                            onClick={() => formApi.removeValue('siblings', i)}
-                            type="button"
-                            className="mb-4 btn btn-danger">Remove</button>
-                        </div>
+                    <div>
+                        <form onSubmit={formApi.submitForm} id="dynamic-form">
+                            <label htmlFor="dynamic-first">Name: </label>
+                            <Text field="name" id="dynamic-first" />
+
+                            <label htmlFor="dynamic-first">Email: </label>
+                            <Text field="email" id="dynamic-first" />
+
+                            <label htmlFor="dynamic-first">Preference: </label>
+                            <Text field="preference" id="dynamic-first" />
+
+                            { formApi.values.friends && formApi.values.friends.map( ( friend, i ) => (
+                    <div key={`friend{i}`}>
+                        <label htmlFor={`friend-name-${i}`}>Name: </label>
+                        <Text field={['friends', i]} id={`friend-name-${i}`} />
+
+                        <label htmlFor={`email-id-${i}`}>Email: </label>
+                        <Text field={['email', i]} id={`email-id-${i}`} />
+
+                        <label htmlFor={`food-preference-${i}`}>Preference: </label>
+                        <Text field={['preference', i]} id={`food-preference-${i}`} />
+
+                      <button
+                        onClick={() => formApi.removeValue('friends', i)}
+                        type="button"
+                        className="btn btn-primary">Remove</button>
+                    </div>
                       ))}
-                      <button type="submit" className="mb-4 btn btn-primary">Submit</button>
+
+                      <br/>
+
+                      <button
+                        onClick={() => formApi.addValue('friends', '')}
+                        type="button"
+                        className="btn btn-primary">Add Another
+                      </button>
+
                     </form>
                   </div>
                 )}

@@ -19,7 +19,7 @@ class DollarRating extends React.Component {
 
     return (
       <div>
-        <h4>Preferred Price: </h4>
+        <p>Preferred Price: </p>
         <StarRating
             name="price"
             renderStarIcon={() => <span>$</span>}
