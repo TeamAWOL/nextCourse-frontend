@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/Login.css';
 import AuthService from '../api/AuthService';
-import Menu from '../components/Navbar.js';
+
 
 class Login extends Component {
   constructor(){
@@ -29,11 +29,9 @@ class Login extends Component {
   render() {
     return (
     <div>
-      <Menu />
-
       <div className="center">
         <div className="card">
-          <h1>Login</h1>
+          
           <form
             onSubmit={this.handleFormSubmit.bind(this)}
           >
@@ -63,7 +61,7 @@ class Login extends Component {
            <a href="/sign_up"> Sign up</a><br />
         </div>
       </div>
-      </div>
+    </div>
 
     );
   }

@@ -4,12 +4,13 @@ import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-do
 import Login from './pages/Login'
 import Sign_up from './pages/Sign_up'
 import Yelp from './pages/YelpAPI'
+import CustomHeader from './components/Navbar';
 
 class App extends Component {
   render() {
   return (
     <div>
-    <h1>NEXT COURSE</h1>
+    <CustomHeader />
 
       <Router>
         <Switch>
