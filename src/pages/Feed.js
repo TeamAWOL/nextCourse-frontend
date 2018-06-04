@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/Feed.css';
 import AuthService from '../api/AuthService';
+import WithAuth from '../api/WithAuth';
 import { Jumbotron } from 'react-bootstrap'
 import GroupsTable from '../components/GroupsTable'
 import RecentOutings from '../components/RecentOutings'
@@ -24,8 +25,5 @@ class Feed extends Component {
     );
   }
 
-
-
-
 }
-export default Feed;
+export default WithAuth(Feed);

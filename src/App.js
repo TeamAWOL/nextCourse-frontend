@@ -8,6 +8,7 @@ import Feed from './pages/Feed'
 import Header from './components/Header'
 
 class App extends Component {
+
   render() {
   return (
     <div>
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path="/sign_up" component={Sign_up}/>} />
           <Route exact path="/yelp" component={Yelp}/>} />
           <Route exact path="/feed" component={Feed}/>} />
+          <Route exact path="/feed" render={(props) => <Feed />} />
           <Route exact path="/" render={() => (<Redirect to="/login"/>)}/>
         </Switch>
       </Router>
