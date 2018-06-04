@@ -1,7 +1,8 @@
 import React, { Component, Form, FormInput } from 'react';
 import '../css/CreateGroup.css';
 import AuthService from '../api/AuthService';
-import StarRatingComponent from 'react-star-rating-component';
+import DollarRating from '../components/DollarRating';
+
 
 class CreateGroup extends Component {
 
@@ -13,16 +14,10 @@ class CreateGroup extends Component {
       price: '',
       member_user_names: '',
       location:'',
-      rating: 1,
       friends: [],
       newfriend: ''
     }
   }
-
-  onStarClick(nextValue, prevValue, name) {
-      this.setState({rating: nextValue})
-  }
-
 
   handleChange(e){
     this.setState({ [e.target.name]: e.target.value })
@@ -84,17 +79,16 @@ class CreateGroup extends Component {
             onChange={this.handleChange.bind(this)}
           />
 
-          <div>
-              <p>Price Range: </p>
-              <StarRatingComponent
-                  name="price"
-                  renderStarIcon={() => <span>$</span>}
-                  starCount={4}
-                  value={rating}
-                  onStarClick={this.onStarClick.bind(this)}
-              />
-          </div>
-          <br/>
+          <input
+              className="form-item"
+              placeholder="Preferred Location"
+              name="location"
+              type="text"
+              onChange={this.handleChange.bind(this)}
+          />
+
+              <DollarRating/>
+              <br/>
 
           <div>
               <div id="dynamicInput">
@@ -114,14 +108,6 @@ class CreateGroup extends Component {
           </div>
 
           <input
-              className="form-item"
-              placeholder="Location"
-              name="location"
-              type="text"
-              onChange={this.handleChange.bind(this)}
-          />
-
-          <input
               className="form-submit"
               value="Submit"
               type="submit"
@@ -130,6 +116,8 @@ class CreateGroup extends Component {
           </form>
 
         </div>
+
+
 
       </div>
     );
