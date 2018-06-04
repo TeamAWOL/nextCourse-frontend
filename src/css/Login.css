@@ -1,6 +1,7 @@
 .center{
   background-image:url(../images/Salmon-NextCourse.jpg);
-  position: absolute;
+  opacity: 0.8;
+  position:absolute;
   height: 100%;
   width: 100%;
   display: flex;
@@ -8,8 +9,14 @@
   align-items: center;
   background-size: cover;
 }
+
+.Navbar-fixed-top{
+
+  
+}
+
 .card{
-  background-color: #fff;
+
   border-radius: 15px;
   padding: 0.8rem;
 }
@@ -31,6 +38,7 @@
   height: 30px;
   width: 16rem;
   border: 1px solid grey;
+  opacity: 0.7;
 }
 
 .form-submit{
