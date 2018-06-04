@@ -3,6 +3,7 @@ import '../css/CreateGroup.css';
 import AuthService from '../api/AuthService';
 import DollarRating from '../components/DollarRating';
 import AddFriend from '../components/AddFriend';
+import WithAuth from '../api/WithAuth'
 
 
 class CreateGroup extends Component {
@@ -76,4 +77,4 @@ class CreateGroup extends Component {
   }
 }
 
-export default CreateGroup;
+export default WithAuth(CreateGroup);
