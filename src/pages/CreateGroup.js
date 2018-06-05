@@ -34,45 +34,43 @@ class CreateGroup extends Component {
     .catch(err =>{ alert(err) })
   }
 
+
   render() {
-    return (
-      <div className="center">
-        <div className="card">
-          <h1>Create New Group</h1>
-          <form
-            onSubmit={this.handleFormSubmit.bind(this)}
-          >
-        <br/>
+      return (
+          <div className="center1">
+              <div className="card">
+                  <h1>Create a Group</h1>
+                  <form onSubmit={this.handleFormSubmit.bind(this)}>
+                  <br/>
 
-          <input
-            className="form-item"
-            placeholder="Group Name"
-            name="group_name"
-            type="text"
-            onChange={this.handleChange.bind(this)}
-          />
+                  <div id="group-details" className="col">
+                  <input
+                      className="form-item1"
+                      placeholder="Enter Group Name"
+                      name="group_name"
+                      type="text"
+                      onChange={this.handleChange.bind(this)}
+                  />
 
-          <input
-              className="form-item"
-              placeholder="Preferred Location"
-              name="location"
-              type="tex t"
-              onChange={this.handleChange.bind(this)}
-          />
-
-          <DollarRating/>
-          <br/>
-          <AddFriend/>
-          <br/>
-          <input
-              className="form-submit"
-              value="Save"
-              type="submit"
-          />
-          </form>
-        </div>
-
-      </div>
+                  <input
+                      className="form-item1"
+                      placeholder="Enter Preferred Location"
+                      name="location"
+                      type="text"
+                      onChange={this.handleChange.bind(this)}
+                  />
+                  </div>
+                  <AddFriend/>
+                  <br/>
+                  <DollarRating/>
+                  <input
+                      className="form-submit"
+                      value="Save"
+                      type="submit"
+                  />
+                  </form>
+              </div>
+          </div>
     );
   }
 }
