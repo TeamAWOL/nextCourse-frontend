@@ -10,13 +10,13 @@ class CustomFooter extends React.Component {
 <Navbar fixedBottom>
 
   <Nav>
-    <NavItem eventKey={1} href="#">
+    <NavItem eventKey={1} href="./about">
       About Us
     </NavItem>
-    <NavItem eventKey={2} href="#">
+    <NavItem eventKey={2} href="./team">
       Our Team
     </NavItem>
-    <NavItem eventKey={2} href="#">
+    <NavItem eventKey={2} href="./contact">
       Contact Us
     </NavItem>
   </Nav>

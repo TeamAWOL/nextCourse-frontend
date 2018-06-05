@@ -20,8 +20,11 @@ class CustomHeader extends React.Component {
                 <NavItem eventKey={2} href="./sign_up">
                   Register
                 </NavItem>
-                <NavItem eventKey={2} href="./feed">
-                  Profile Feed
+                <NavItem eventKey={3} href="./Feed">
+                  Feed
+                </NavItem>
+                <NavItem eventKey={4} className='pull-right' href="./login">
+                  Log Out
                 </NavItem>
               </Nav>
             </Navbar.Collapse>
