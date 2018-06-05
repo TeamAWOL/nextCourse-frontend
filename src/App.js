@@ -5,12 +5,14 @@ import Login from './pages/Login'
 import Sign_up from './pages/Sign_up'
 import Yelp from './pages/YelpAPI'
 import CustomHeader from './components/Navbar';
+import CustomFooter from './components/Footer';
 
 class App extends Component {
   render() {
   return (
     <div>
     <CustomHeader />
+    <CustomFooter />
 
       <Router>
         <Switch>

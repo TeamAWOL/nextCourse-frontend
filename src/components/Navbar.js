@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, MenuItem, NavDropdown, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 class CustomHeader extends React.Component {
   render() {
