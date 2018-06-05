@@ -6,6 +6,7 @@ export default class AuthService {
         this.fetch = this.fetch.bind(this)
         this.login = this.login.bind(this)
         this.getUserId = this.getUserId.bind(this)
+
     }
 
 
