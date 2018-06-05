@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import StarRating from 'react-star-rating-component';
+import '../css/CreateGroup.css';
 
 class DollarRating extends React.Component {
     constructor() {
@@ -18,20 +19,26 @@ class DollarRating extends React.Component {
     const { rating } = this.state;
 
     return (
-      <div>
-        <p>Preferred Price: </p>
-        <StarRating
-            name="price"
-            renderStarIcon={() => <span>$</span>}
-            starCount={4}
-            starColor= "green"
-            value={rating}
-            onStarClick={this.onStarClick.bind(this)}
-        />
-      </div>
-    );
-  }
-}
+        <div>
+          <div className="select-price">
+            <p>Select Price: </p>
+          </div>
+            <div className="StarRating">
+            <StarRating
+                name="price"
+                renderStarIcon={() => <span>$</span>}
+                starCount={4}
+                starColor= "green"
+                emptyStarColor="grey"
+                star-size="70"
+                value={rating}
+                onStarClick={this.onStarClick.bind(this)}
+            />
+            </div>
+          </div>
+        );
+      }
+    }
 
 
 export default DollarRating

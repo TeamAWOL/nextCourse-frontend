@@ -20,7 +20,6 @@ class AddValue extends Component {
         this.setState({newfriend: newfriend})
     }
 
-    //pushes a new friend to the friends array
     addFriend(event) {
         let {friends, newfriend} = this.state
         friends.push(newfriend)
