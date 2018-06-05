@@ -7,7 +7,8 @@ export default function withAuth(WrappedComponent) {
 		constructor() {
 			super();
 			this.state = {
-				userId: null
+				userId: '',
+				user:''
 			}
 		}
 
@@ -18,6 +19,7 @@ export default function withAuth(WrappedComponent) {
 			} else {
 				try {
 					const userId = Auth.getUserId()
+
 					this.setState({
 						userId: userId
 					})
@@ -35,6 +37,7 @@ export default function withAuth(WrappedComponent) {
 					<WrappedComponent
 						history={this.props.history}
 						userId={this.state.userId}
+						user={this.state.user}
 					/>
 				)
 			} else {

@@ -16,15 +16,8 @@ class Yelp extends Component {
     console.log(this.props.userId)
     e.preventDefault()
 
-    let type = 'Japanese'
-    let location = 'San diego'
-    let price = 3
+      this.props.history.replace('/Result')
 
-    get_next_course(type,location,price)
-    .then(res =>{
-      this.props.history.replace('/Yelp')
-    })
-    .catch(err =>{ alert(err) })
   }
 
 
@@ -101,7 +94,7 @@ class Yelp extends Component {
 
   handleOutingAdd(e){
     e.preventDefault()
-    var outing = {name:"TEST1Outing",winner:"David"}
+    var outing = {name:"TEST20uting",winner:"David"}
     add_user_outing(this.props.userId,outing)
     .then(res =>{
       this.props.history.replace('/Yelp')
@@ -112,7 +105,8 @@ class Yelp extends Component {
   handleOutingDelete(e){
     e.preventDefault()
 
-    delete_user_outing(4)
+    delete_user_outing(2)
+
     .then(res =>{
       this.props.history.replace('/Yelp')
     })
@@ -121,7 +115,7 @@ class Yelp extends Component {
 
   handleOutingUpdate(e){
     e.preventDefault()
-    var outing = {"id":"1","winner":"Mando"}
+    var outing = {"id":"1","winner":"MandoMundo"}
     update_user_outing(outing)
     .then(res =>{
       this.props.history.replace('/Yelp')
@@ -141,7 +135,7 @@ class Yelp extends Component {
 
   handleFriendAdd(e){
     e.preventDefault()
-    var friend = {name:"Friend1",email:"friend@friend.com",preference:"Burger"}
+    var friend = {name:"Friend2",email:"friend@friend.com",preference:"Sushci"}
     add_group_friend(1,friend)
     .then(res =>{
       this.props.history.replace('/Yelp')
@@ -152,7 +146,7 @@ class Yelp extends Component {
   handleFriendDelete(e){
     e.preventDefault()
 
-    delete_group_friend(4)
+    delete_group_friend(2)
     .then(res =>{
       this.props.history.replace('/Yelp')
     })
@@ -161,7 +155,7 @@ class Yelp extends Component {
 
   handleFriendUpdate(e){
     e.preventDefault()
-    	var friend = {"id":"1","name":"Friend2"}
+    	var friend = {"id":"1","name":"MandoMunto"}
     update_group_friend(friend)
     .then(res =>{
       this.props.history.replace('/Yelp')
