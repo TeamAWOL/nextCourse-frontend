@@ -18,7 +18,7 @@ class Feed extends Component {
         <div id="groups-area" className="col-lg-6">
           <GroupsTable />
         </div>
-        <div id="recents-area"className="col-lg-6">
+        <div id="recents-area" className="col-lg-6">
           <RecentOutings />
         </div>
       </div>

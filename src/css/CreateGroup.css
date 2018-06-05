@@ -1,24 +1,36 @@
-.friend-tile {
-    border-radius: 40px;
-    margin-right: 10px;
-    margin-top: 15px;
-    background-color: #33C1B5;
-    opacity: 0.7;
-    color: #FFF;
-    list-style-type: none;
-    padding: 15px;
-    max-width: 80px;
-    position: relative;
+.StarRating {
+    font-size: 25px;
 }
 
-.friend-tile:after {
-    content: " ×";
-    color: #333;
-    font-weight: 400;
-    opacity: .6;
-    font-size: 30px;
-    line-height: 20px;
-    position: absolute;
-    right: 20px;
-    top: 14px;
+.select-price {
+    font-size: 16px;
+}
+
+.name {
+
+}
+
+.card {
+    background-color: white;
+    opacity: 1.0;
+}
+
+.center1{
+  background-color: #A9CCE3;
+  opacity: 0.9;
+  position:absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+.form-item1{
+  padding: 5px;
+  margin-bottom: 2rem;
+  height: 40px;
+  width: 30rem;
+  border: 1px solid grey;
 }
