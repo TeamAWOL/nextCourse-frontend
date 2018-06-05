@@ -27,10 +27,10 @@ class Sign_up extends Component {
                      this.state.last_name,
                      this.state.email,
                      this.state.zipcode,
-                     this.dob,
+                     this.state.dob,
                      this.state.password)
     .then(res =>{
-      this.props.history.replace('/')
+      this.props.history.replace('/Feed')
     })
     .catch(err =>{ alert(err) })
   }

@@ -8,20 +8,6 @@ export default class AuthService {
         this.getUserId = this.getUserId.bind(this)
     }
 
-    get_next_course(searchParam) {
-      return this.fetch(`${this.domain}/get_next_course`, { // Our backend endpoint
-        method: 'GET',
-        body: JSON.stringify({
-          param: { // We pass in yelp searchParam to
-             searchParam
-          }
-        })
-      }).then(res => {
-        this.setToken(res.jwt)
-        return Promise.resolve(res);
-      })
-    }
-
 
     login(email, password) {
       return this.fetch(`${this.domain}/login_token`, { // Our backend endpoint
@@ -33,6 +19,7 @@ export default class AuthService {
           }
         })
       }).then(res => {
+        console.log(res);
         this.setToken(res.jwt)
         return Promise.resolve(res);
       })
