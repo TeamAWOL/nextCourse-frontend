@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-do
 import Login from './pages/Login'
 import Sign_up from './pages/Sign_up'
 
+
+import Header from './components/Header'
 import CustomHeader from './components/Navbar';
 import CustomFooter from './components/Footer';
 
@@ -12,6 +14,8 @@ import Yelp from './pages/YelpAPITest'
 import Feed from './pages/Feed'
 import Game from './pages/Game'
 import Header from './components/Header'
+import Result from './pages/Result'
+
 
 
 
@@ -31,6 +35,7 @@ class App extends Component {
           <Route exact path="/yelp" component={Yelp}/>} />
           <Route exact path="/feed" component={Feed}/>} />
           <Route exact path="/game" component={Game}/>} />
+          <Route exact path="/Result" component={Result}/>} />
           <Route exact path="/" render={() => (<Redirect to="/login"/>)}/>
         </Switch>
       </Router>
