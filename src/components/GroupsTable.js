@@ -39,7 +39,7 @@ class GroupsTable extends Component {
             </ButtonGroup>
           </li>
           <li class="list-group-item green"><span>Add New</span>
-            <Button id="addGroup" className="pull-right green"><i class="fas fa-plus-square"></i></Button>
+            <Button href="../CreateGroup" id="addGroup" className="pull-right green"><i class="fas fa-plus-square"></i></Button>
           </li>
         </ul>
       </div>
