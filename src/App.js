@@ -13,7 +13,7 @@ import CreateGroup from './pages/CreateGroup'
 import Yelp from './pages/YelpAPITest'
 import Feed from './pages/Feed'
 import Game from './pages/Game'
-import Header from './components/Header'
+
 import Result from './pages/Result'
 
 
