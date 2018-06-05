@@ -21,7 +21,7 @@ class Login extends Component {
     e.preventDefault()
     this.Auth.login(this.state.email,this.state.password)
     .then(res =>{
-      this.props.history.replace('/Yelp')
+      this.props.history.replace('/Feed')
     })
     .catch(err =>{ alert(err) })
   }
@@ -31,7 +31,7 @@ class Login extends Component {
     <div>
       <div className="center">
         <div className="card">
-          
+
           <form
             onSubmit={this.handleFormSubmit.bind(this)}
           >
