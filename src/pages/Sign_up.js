@@ -39,13 +39,13 @@ class Sign_up extends Component {
     return (
       <div className="center">
         <div className="card">
-          <h1>Sign Up</h1>
+
           <form
             onSubmit={this.handleFormSubmit.bind(this)}
           >
           <input
             className="form-item"
-            placeholder="First Name goes here..."
+            placeholder="Enter First Name"
             name="first_name"
             type="text"
             onChange={this.handleChange.bind(this)}
@@ -53,7 +53,7 @@ class Sign_up extends Component {
 
           <input
             className="form-item"
-            placeholder="Last Name goes here..."
+            placeholder="Enter Last Name"
             name="last_name"
             type="text"
             onChange={this.handleChange.bind(this)}
@@ -61,7 +61,7 @@ class Sign_up extends Component {
 
           <input
               className="form-item"
-              placeholder="email goes here..."
+              placeholder="Enter Email"
               name="email"
               type="text"
               onChange={this.handleChange.bind(this)}
@@ -70,7 +70,7 @@ class Sign_up extends Component {
 
           <input
               className="form-item"
-              placeholder="zipcode goes here..."
+              placeholder="Enter Zipcode"
               name="zipcode"
               type="text"
               onChange={this.handleChange.bind(this)}
@@ -79,7 +79,7 @@ class Sign_up extends Component {
 
           <input
               className="form-item"
-              placeholder="Birthday goes here..."
+              placeholder="Enter DOB"
               name="dob"
               type="date"
               onChange={this.handleChange.bind(this)}
@@ -87,9 +87,9 @@ class Sign_up extends Component {
 
           <input
               className="form-item"
-              placeholder="Password goes here..."
+              placeholder="Enter Password"
               name="password"
-              type="text"
+              type="Password"
               onChange={this.handleChange.bind(this)}
           />
 

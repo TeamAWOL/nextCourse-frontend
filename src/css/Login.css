@@ -1,15 +1,20 @@
 .center{
-  background-color: #7ac143;
-  position: absolute;
+  background-image:url(../images/Salmon-NextCourse.jpg);
+  opacity: 0.9;
+  position:absolute;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
 }
 
+.navbar {
+  margin-bottom: 0px;
+}
 .card{
-  background-color: #fff;
+
   border-radius: 15px;
   padding: 0.8rem;
 }
@@ -28,15 +33,15 @@
 .form-item{
   padding: 5px;
   margin-bottom: 2rem;
-  height: 30px;
-  width: 16rem;
+  height: 40px;
+  width: 30rem;
   border: 1px solid grey;
 }
 
 .form-submit{
   height: 35px;
   color: #fff;
-  background-color: #7ac143;
+  background-color: #FF3030;
   border: none;
   transition: 0.3s opacity ease;
   cursor: pointer;

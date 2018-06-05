@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/Login.css';
 import AuthService from '../api/AuthService';
 
+
 class Login extends Component {
   constructor(){
     super()
@@ -27,15 +28,16 @@ class Login extends Component {
 
   render() {
     return (
+    <div>
       <div className="center">
         <div className="card">
-          <h1>Login</h1>
+          
           <form
             onSubmit={this.handleFormSubmit.bind(this)}
           >
             <input
               className="form-item"
-              placeholder="email goes here..."
+              placeholder="Enter Email"
               name="email"
               type="text"
               onChange={this.handleChange.bind(this)}
@@ -43,7 +45,7 @@ class Login extends Component {
             />
             <input
               className="form-item"
-              placeholder="Password goes here..."
+              placeholder="Enter Password"
               name="password"
               type="password"
               onChange={this.handleChange.bind(this)}
@@ -58,8 +60,9 @@ class Login extends Component {
 
            <a href="/sign_up"> Sign up</a><br />
         </div>
-
       </div>
+    </div>
+
     );
   }
 }
