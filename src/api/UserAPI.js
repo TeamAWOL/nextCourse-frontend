@@ -13,6 +13,17 @@ let delete_user = function(userId) {
  		})
 }
 
+let get_user = function(userId){
+    console.log("User ID: " + userId)
+    return fetch(BASE + '/users/'+ userId,{
+        method: 'GET'
+        }).then((r) => {
+                let json = r.json()
+                console.log(json)
+                return json
+        })
+}
+
 let update_user = function(user){
    console.log("Updating User: " + user.id )
    return fetch(BASE + '/users/' + user.id ,{
@@ -33,5 +44,6 @@ let update_user = function(user){
 
 export  {
 	         delete_user,
-					 update_user
+					 update_user,
+           get_user
 }
