@@ -13,7 +13,6 @@ class Yelp extends Component {
 // YELP TESTING ..  using below logic will get list of 5 resturant from backend
   handleYelpSubmit(e){
 
-    console.log(this.props.userId)
     e.preventDefault()
 
       this.props.history.replace('/Result')
