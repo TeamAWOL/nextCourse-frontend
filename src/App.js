@@ -29,6 +29,8 @@ class App extends Component {
           <Route exact path="/EditGroup" component={EditGroup}/>} />
           <Route exact path="/yelp" component={Yelp}/>} />
           <Route exact path="/feed" component={Feed}/>} />
+          <Route exact path="/Result" component={Result}/>} />
+          <Route exact path="/Game" component={Game}/>} />
           <Route exact path="/feed" render={(props) => <Feed />} />
           <Route exact path="/" render={() => (<Redirect to="/login"/>)}/>
         </Switch>
