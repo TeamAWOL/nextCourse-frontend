@@ -13,7 +13,8 @@ let get_user_groups = function(userId){
 }
 
 let add_user_group = function(userId,group){
-  console.log("Adding group to a user: " + userId)
+  console.log("Adding Groups to UserId: " + userId)
+  console.log("Input Group Info: " + group.name)
   return fetch(BASE + '/groups/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json'},
