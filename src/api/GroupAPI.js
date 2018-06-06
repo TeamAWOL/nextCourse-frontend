@@ -3,7 +3,7 @@ const BASE = 'http://localhost:3000'
 // Group related API Calls
 let get_user_groups = function(userId){
 	console.log("User ID: " + userId)
-	return fetch(BASE + '/groups/?userId=' + 1,{
+	return fetch(BASE + '/groups/?userId=' + userId,{
 		method: 'GET'
 		}).then((r) => {
 				let json = r.json()

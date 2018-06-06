@@ -10,7 +10,8 @@ import CustomFooter from './components/Footer';
 import CreateGroup from './pages/CreateGroup'
 import Yelp from './pages/YelpAPITest'
 import Feed from './pages/Feed'
-import Header from './components/Header'
+import Result from './pages/Result'
+import Game from './pages/Game'
 
 
 
@@ -33,6 +34,8 @@ class App extends Component {
           <Route exact path="/CreateGroup" component={CreateGroup}/>} />
           <Route exact path="/yelp" component={Yelp}/>} />
           <Route exact path="/feed" component={Feed}/>} />
+          <Route exact path="/Result" component={Result}/>} />
+          <Route exact path="/Game" component={Game}/>} />
           <Route exact path="/feed" render={(props) => <Feed />} />
           <Route exact path="/" render={() => (<Redirect to="/login"/>)}/>
         </Switch>
