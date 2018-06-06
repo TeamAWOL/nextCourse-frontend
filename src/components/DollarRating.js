@@ -25,7 +25,7 @@ class DollarRating extends React.Component {
           </div>
             <div className="StarRating">
             <StarRating
-                name="price"
+                name="price_range"
                 renderStarIcon={() => <span>$</span>}
                 starCount={4}
                 starColor= "green"

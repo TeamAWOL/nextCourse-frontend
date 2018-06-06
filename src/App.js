@@ -7,35 +7,33 @@ import Header from './components/Header'
 import CustomHeader from './components/Navbar';
 import CustomFooter from './components/Footer';
 import CreateGroup from './pages/CreateGroup'
+import EditGroup from './pages/EditGroup'
 import Yelp from './pages/YelpAPITest'
 import Feed from './pages/Feed'
 import Game from './pages/Game'
 import Result from './pages/Result'
 
-
-
-
 class App extends Component {
-
-
   render() {
   return (
     <div>
 
-      <CustomHeader />
+    <CustomHeader />
+    <CustomFooter />
+
       <Router>
         <Switch>
           <Route exact path="/login" component={Login}/>} />
           <Route exact path="/sign_up" component={Sign_up}/>} />
           <Route exact path="/CreateGroup" component={CreateGroup}/>} />
+          <Route exact path="/EditGroup" component={EditGroup}/>} />
           <Route exact path="/yelp" component={Yelp}/>} />
           <Route exact path="/feed" component={Feed}/>} />
-          <Route exact path="/game" component={Game}/>} />
-          <Route exact path="/Result" component={Result}/>} />
+          <Route exact path="/feed" render={(props) => <Feed />} />
           <Route exact path="/" render={() => (<Redirect to="/login"/>)}/>
         </Switch>
       </Router>
-      <CustomFooter />
+
     </div>
   );
 }
