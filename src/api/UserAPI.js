@@ -1,6 +1,17 @@
 const BASE = 'http://localhost:3000'
 
 
+let get_user = function(userId){
+	console.log("User ID: " + userId)
+	return fetch(BASE + '/users/'+ userId,{
+		method: 'GET'
+		}).then((r) => {
+				let json = r.json()
+				console.log(json)
+				return json
+		})
+}
+
 let delete_user = function(userId) {
    console.log("Deleting User: " + userId)
 	 return fetch(BASE + '/users/' + userId, {
@@ -11,17 +22,6 @@ let delete_user = function(userId) {
  				console.log(json)
  				return json
  		})
-}
-
-let get_user = function(userId){
-    console.log("User ID: " + userId)
-    return fetch(BASE + '/users/'+ userId,{
-        method: 'GET'
-        }).then((r) => {
-                let json = r.json()
-                console.log(json)
-                return json
-        })
 }
 
 let update_user = function(user){
@@ -43,7 +43,7 @@ let update_user = function(user){
 }
 
 export  {
-	         delete_user,
-					 update_user,
-           get_user
+           get_user,
+           delete_user,
+					 update_user
 }
