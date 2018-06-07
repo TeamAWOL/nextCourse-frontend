@@ -11,6 +11,8 @@ import Feed from './pages/Feed'
 import Header from './components/Header'
 
 import About from './pages/About';
+import Team from './pages/Team';
+import Contact from './pages/Contact';
 
 
 
@@ -36,6 +38,8 @@ class App extends Component {
           <Route exact path="/feed" render={(props) => <Feed />} />
           <Route exact path="/" render={() => (<Redirect to="/login"/>)}/>
           <Route exact path="/about" component={About}/>} />
+          <Route exact path="/team" component={Team}/>} />
+          <Route exact path="/contact" component={Contact}/>} />
         </Switch>
       </Router>
 

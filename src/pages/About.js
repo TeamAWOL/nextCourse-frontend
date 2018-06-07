@@ -21,7 +21,7 @@ class About extends Component {
           <p>
             <h3> Welcome fellow foodie -- we are glad you decided to check us out!</h3>
           </p>
-            <h4> One day, like many days, we could not choose what to eat for lunch. Damon, wanted sushi, Steven wanted pizza, Armando wanted a burger and David wanted fish tacos.  We spent the first ten minutes of our lunch-break arguing on a selection!  Finally, we decided pizza but we all thought there had to be a better way </h4>
+            <h4> One day, like many days, we could not choose what to eat for lunch. Damon, wanted sushi, Steven, wanted pizza, Armando, wanted a burger and David, wanted fish tacos.  We spent the first ten minutes of our lunch-break arguing on a selection!  Finally, we decided pizza but we all thought there had to be a better way </h4>
 
         </div>
 

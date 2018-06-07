@@ -1,40 +1,25 @@
 import React, { Component } from 'react';
 import '../css/Team.css';
-import AuthService from '../api/AuthService';
-import React, { Component } from 'react';
-import '../css/About.css';
-import { Jumbotron } from 'react-bootstrap';
+import { Jumbotron , Carousel} from 'react-bootstrap';
+import CustomCarousel from '../components/Carousel';
 
 
-class About extends Component {
+class Team extends Component {
 
   render() {
     return (
-      <div className='about'>
+      <div className='team'>
         <div className='jumbo'>
           <Jumbotron>
-            <h1>The Feed Me Story</h1>
+            <h1>Team AWOL</h1>
             <p>
-              Four Friends Wanted to Make Restaurant Selections Easier
+              Four Bootcamp Students Eating Together
             </p>
         </Jumbotron>
         </div>
 
-        <div className='about-body'>
-          <p>
-            <h3> Welcome fellow foodie -- we are glad you decided to check us out!</h3>
-          </p>
-            <h4> One day, like many days, we could not choose what to eat for lunch. Damon, wanted sushi, Steven wanted pizza, Armando wanted a burger and David wanted fish tacos.  We spent the first ten minutes of our lunch-break arguing on a selection!  Finally, we decided pizza but we all thought there had to be a better way </h4>
-
-        </div>
-
-        <div className='mv-statement'>
-          <p>
-            <h3>Our Mission:</h3><h4> Create a fun restaurant selector that supplies the restaurant and the location allowing you more time to enjoy the food</h4>
-          </p>
-          <p>
-             <h3>Our Values:</h3> <h4>Fair and social -- everyone has the same odds to win with our algorithm</h4>
-          </p>
+        <div>
+          <CustomCarousel />
         </div>
     </div>
     );
@@ -42,4 +27,4 @@ class About extends Component {
 }
 
 
-export default About;
+export default Team;
