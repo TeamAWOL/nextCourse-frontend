@@ -42,7 +42,7 @@ class GroupsTable extends Component {
             )
           })}
         </ListGroup>
-]      </div>
+      </div>
     )
   }
 

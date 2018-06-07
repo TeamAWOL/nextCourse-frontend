@@ -13,6 +13,13 @@ class Login extends Component {
     }
   }
 
+  componentWillMount() {
+
+    if (this.props.logout)
+      if (this.props.logout == 'YES')
+         this.Auth.logout()
+  }
+
   handleChange(e){
     this.setState({ [e.target.name]: e.target.value })
   }

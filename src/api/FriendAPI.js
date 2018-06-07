@@ -11,7 +11,7 @@ let get_group_friends = function(groupId){
 		})
 }
 
-let add_group_friend = function(groupId,friend){
+let add_group_friend = function(groupId,friends){
   console.log("Adding friend to group: " + groupId)
   return fetch(BASE + '/friends/', {
     method: 'POST',
@@ -19,7 +19,7 @@ let add_group_friend = function(groupId,friend){
     body: JSON.stringify({
       mods: { // We pass in yelp searchParam to
           groupId,
-          friend
+          friends
       }
     })
    }).then((r) => {

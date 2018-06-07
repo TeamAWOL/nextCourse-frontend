@@ -23,11 +23,13 @@ class Result extends Component {
 
   componentWillMount() {
 
+    let group_name='poker'
+		let friend_name='Friend1'
     let type = 'korean'
     let location = 'San diego'
-    let price = '1'
+    let price_range = '1'
 
-    get_next_course(type,location,price)
+    get_next_course(this.props.userId,group_name,friend_name,type,location,price_range)
       .then(json => {
         console.log(json);
         this.setState({
@@ -45,8 +47,6 @@ class Result extends Component {
           lat: this.state.result.coordinates.latitude,
           lng: this.state.result.coordinates.longitude
         })
-
-
     })
   }
 
