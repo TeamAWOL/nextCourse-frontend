@@ -7,7 +7,6 @@ let get_user = function(userId){
 		method: 'GET'
 		}).then((r) => {
 				let json = r.json()
-				console.log(json)
 				return json
 		})
 }
@@ -19,8 +18,7 @@ let delete_user = function(userId) {
 
  		}).then((r) => {
  				let json = r.json()
- 				console.log(json)
- 				return json
+  				return json
  		})
 }
 
