@@ -35,13 +35,13 @@ class AddFriend extends Component {
                       <button
                         onClick={() => formApi.removeValue('friends', i)}
                         type="button"
-                        className="mb-4 btn btn-danger">Remove</button>
+                        className="mb-4 btn btn-danger">-</button>
                     </div>
                   ))}
                   <button
                     onClick={() => formApi.addValue('friends', '')}
                     type="button"
-                    className="mb-4 mr-4 btn btn-success">Add Another</button>
+                    className="mb-4 mr-4 btn btn-success">+</button>
                 </form>
               </div>
             )}

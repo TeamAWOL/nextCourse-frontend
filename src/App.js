@@ -23,11 +23,12 @@ class App extends Component {
 
       <Router>
         <Switch>
-          <Route exact path="/login" component={Login}/>} />
-          <Route exact path="/logout" render={(props) => <Login logout="YES"/>} />
+
+          <Route exact path="/login" component={Login}/>
+          <Route exact path="/logout" render={(props) => <Login logout="YES"/> } />
           <Route exact path="/sign_up" component={Sign_up}/>} />
           <Route exact path="/CreateGroup" component={CreateGroup}/>} />
-          <Route exact path="/EditGroup" component={EditGroup}/>} />
+          <Route path='/EditGroup/:id' component={EditGroup}/>} />
           <Route exact path="/yelp" component={Yelp}/>} />
           <Route exact path="/feed" component={Feed}/>} />
           <Route exact path="/Result" component={Result}/>} />
