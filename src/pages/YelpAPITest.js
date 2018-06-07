@@ -53,7 +53,7 @@ class Yelp extends Component {
 
   handleGroupAdd(e){
     e.preventDefault()
-    var group = {name:"TEST1",location:"Houston",price_rance:1}
+    var group = {name:"TEST1",location:"Houston",price_range:1}
     add_user_group(this.props.userId,group)
     .then(res =>{
       this.props.history.replace('/Yelp')
@@ -93,7 +93,7 @@ class Yelp extends Component {
 
   handleOutingAdd(e){
     e.preventDefault()
-    var outing = {name:"TEST20uting",winner:"David"}
+    var outing = {"name":"TEST20uting","winner":"David"}
     add_user_outing(this.props.userId,outing)
     .then(res =>{
       this.props.history.replace('/Yelp')
@@ -134,8 +134,11 @@ class Yelp extends Component {
 
   handleFriendAdd(e){
     e.preventDefault()
-    var friend = {name:"Friend2",email:"friend@friend.com",preference:"Sushci"}
-    add_group_friend(1,friend)
+    var friend1 = {name:"test",email:"friend@friend.com",preference:"Sushi"}
+    var friend2 = {name:"test2",email:"friend@friend.com",preference:"Burger"}
+    var friend3 = {name:"test2",email:"friend@friend.com",preference:"Taco"}
+    var friends = {friend1,friend2,friend3}
+    add_group_friend(1,friends)
     .then(res =>{
       this.props.history.replace('/Yelp')
     })
@@ -154,7 +157,7 @@ class Yelp extends Component {
 
   handleFriendUpdate(e){
     e.preventDefault()
-    	var friend = {"id":"1","name":"MandoMunto"}
+    	var friend = {"id":"3","name":"MandoMunto"}
     update_group_friend(friend)
     .then(res =>{
       this.props.history.replace('/Yelp')
