@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/Team.css';
 import { Jumbotron , Carousel} from 'react-bootstrap';
-import CustomCarousel from '../components/Carousel';
+import CustomTeam from '../components/Team';
 
 
 class Team extends Component {
@@ -19,7 +19,7 @@ class Team extends Component {
         </div>
 
         <div>
-          <CustomCarousel />
+          <CustomTeam />
         </div>
     </div>
     );
