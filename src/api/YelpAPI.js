@@ -2,15 +2,18 @@ const BASE = 'http://localhost:3000'
 
 
 // YELP API CALLS
-let get_next_course = function(type,location,price) {
+let get_next_course = function(userId,group_name,friend_name,preference,location,price_range) {
 	return fetch(BASE + '/get_next_course', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json'},
 		body: JSON.stringify({
 		  filter: { // We pass in yelp searchParam to
-			 type,
+       userId,
+			 group_name,
+			 friend_name,
+			 preference,
 			 location,
-			 price
+			 price_range
 		  }
 	  })
 	   }).then((r) => {
