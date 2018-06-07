@@ -14,6 +14,8 @@ import About from './pages/About';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
 
+import Game from './pages/Game';
+
 
 
 class App extends Component {
@@ -40,6 +42,7 @@ class App extends Component {
           <Route exact path="/about" component={About}/>} />
           <Route exact path="/team" component={Team}/>} />
           <Route exact path="/contact" component={Contact}/>} />
+          <Route exact path="/game" component={Game}/>} />
         </Switch>
       </Router>
 
