@@ -3,72 +3,84 @@ import '../css/CreateGroup.css';
 import AuthService from '../api/AuthService';
 import DollarRating from '../components/DollarRating';
 import AddFriend from '../components/AddFriend';
+import {add_user_group} from '../api/GroupAPI';
 import WithAuth from '../api/WithAuth'
+import { Redirect } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
+
 
 class EditGroup extends Component {
-    constructor(props){
-      super(props)
-      this.Auth = new AuthService()
-      this.state={
-        group_name: '',
-        location:''
-      }
-    }
+  constructor(props){
+    super(props)
 
-    handleChange(e){
-      this.setState({ [e.target.name]: e.target.value })
-    }
 
-    handleFormSubmit(e){
-      e.preventDefault()
-      this.Auth.create(this.state.group_name,
-                       this.state.price_range,
-                       this.state.member_user_names,
-                       this.state.location)
-      .then(res =>{
-        this.props.history.replace('/')
+    this.state={
+      form: {
+        name: '',
+        location:'',
+        price_range:''
+        },
+        POSTsuccess: false,
+    }
+  }
+
+  handlePriceRangeChange(e){
+     let {form} = this.state
+
+     form['price_range'] = e
+     this.setState({form})
+  }
+
+  handleInput(e){
+    let {form} = this.state
+    form[e.target.name] = e.target.value
+    this.setState({ form })
+  }
+
+  handleSubmit(e){
+    add_user_group(this.props.userId, this.state.form)
+    .then(resp => {
+      this.setState({
+        POSTsuccess: true
       })
-      .catch(err =>{ alert(err) })
-    }
+    })
+  }
 
-
-    render() {
-      return (
-        <div className="form-body">
-          <div className="card">
-            <h1>Create a Group</h1>
-            <form onSubmit={this.handleFormSubmit.bind(this)}>
-            <br/>
-              <div id="group-details" className="col">
-                <input
-                  className="form-item1"
-                  placeholder="Enter Group Name"
-                  name="name"
-                  type="text"
-                  onChange={this.handleChange.bind(this)}
-                />
-
-                <input
-                  className="form-item1"
-                  placeholder="Enter Preferred Location"
-                  name="location"
-                  type="text"
-                  onChange={this.handleChange.bind(this)}
-                />
-              </div>
-              <AddFriend/>
-              <br/>
-              <DollarRating/>
+  render() {
+    return (
+      <div className="form-body">
+        <div className="card">
+          <h1>Edit Group</h1>
+          <form>
+          <br/>
+            <div id="group-details" className="col">
               <input
-                className="form-submit"
-                value="Save"
-                type="submit"
+                className="form-item1"
+                placeholder="Enter Group Name"
+                name="name"
+                type="text"
+                onChange={this.handleInput.bind(this)}
               />
-            </form>
-          </div>
+              <input
+                className="form-item1"
+                placeholder="Enter Preferred Location"
+                name="location"
+                type="text"
+                onChange={this.handleInput.bind(this)}
+              />
+            </div>
+            <AddFriend/>
+            <DollarRating handler={this.handlePriceRangeChange.bind(this)}/>
+            <Button
+              className="form-submit" onClick={this.handleSubmit.bind(this)}>
+              Submit
+            </Button>
+          </form>
+          {this.state.POSTsuccess && <Redirect to={"/feed"} /> }
         </div>
-      );
-    }
-    }
+      </div>
+    );
+  }
+}
 
-    export default WithAuth(EditGroup);
+export default WithAuth(EditGroup);

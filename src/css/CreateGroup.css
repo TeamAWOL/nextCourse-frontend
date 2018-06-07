@@ -15,7 +15,7 @@
     opacity: 1.0;
 }
 
-.form-body{
+.form-body {
   background-color: #A9CCE3;
   opacity: 0.9;
   position:absolute;
@@ -27,7 +27,7 @@
   background-size: cover;
 }
 
-.form-item1{
+.form-item1 {
   padding: 5px;
   margin-bottom: 2rem;
   height: 40px;

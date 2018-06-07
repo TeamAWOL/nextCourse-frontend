@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, ButtonGroup, Grid, Col, Row, ListGroup, ListGroupItem } from 'react-bootstrap'
 import WithAuth from '../api/WithAuth'
 import { get_user_groups } from '../api/GroupAPI'
+import { Link } from 'react-router-dom'
 
 class GroupsTable extends Component {
   constructor(props){
@@ -21,6 +22,11 @@ class GroupsTable extends Component {
     )
   }
 
+  deleteHandler(i, e) {
+    e.preventDefault()
+    this.props.onDelete(this.props.blogPosts[i].id)
+  }
+
   render() {
     return (
       <div>
@@ -35,8 +41,12 @@ class GroupsTable extends Component {
                 <span>{group.name}</span>
                 <ButtonGroup className="pull-right" bsSize="small">
                   <Button href="../Game" bsStyle="success">Play</Button>
-                  <Button href="#" bsStyle="primary">Edit</Button>
+
+                  <Link to={`/EditGroup/${group.name}`} > <Button bsStyle="primary">Edit</Button>
+                  </Link>
+
                   <Button href="#" bsStyle="danger">Delete</Button>
+                  {/* <btn onClick={this.deleteHandler.bind(this, i)} className="btn btn-danger btn-sm">Delete</btn> */}
                 </ButtonGroup>
               </ListGroupItem>
             )
