@@ -46,7 +46,7 @@ class GameModal extends React.Component {
           </Modal.Header>
           <Modal.Body>
             <p>
-            <div class="container">
+            <div class="ModalContainer">
                 <div class="item item-1"></div>
                 <div class="item item-2"></div>
                 <div class="item item-3"></div>
@@ -57,7 +57,7 @@ class GameModal extends React.Component {
           <Modal.Footer>
             <Button onClick={this.handleHide}>Click for Results</Button>
           </Modal.Footer>
-          {this.state.switchgit && <Redirect to={'/Result'}/> }
+          {this.state.switch && <Redirect to={'/Result'}/> }
         </Modal>
       </ButtonToolbar>
     );
