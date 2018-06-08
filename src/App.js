@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-do
 import Login from './pages/Login'
 import Sign_up from './pages/Sign_up'
 
-
-
 import CustomHeader from './components/Navbar';
 import CustomFooter from './components/Footer';
 import CreateGroup from './pages/CreateGroup'

@@ -15,7 +15,6 @@ class DollarRating extends React.Component {
             name="price_range"
             renderStarIcon={() => <span>$</span>}
             starCount={4}
-            value={1}
             starColor= "green"
             emptyStarColor="grey"
             onStarClick={this.props.handler}

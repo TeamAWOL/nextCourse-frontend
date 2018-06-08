@@ -57,7 +57,7 @@ class GameModal extends React.Component {
           <Modal.Footer>
             <Button onClick={this.handleHide}>Click for Results</Button>
           </Modal.Footer>
-          {this.state.switch && <Redirect to={'/Result'}/> }
+          {this.state.switchgit && <Redirect to={'/Result'}/> }
         </Modal>
       </ButtonToolbar>
     );
