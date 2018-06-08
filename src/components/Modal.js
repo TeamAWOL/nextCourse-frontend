@@ -46,18 +46,18 @@ class GameModal extends React.Component {
           </Modal.Header>
           <Modal.Body>
             <p>
-            <div class="container">
-                <div class="item item-1"></div>
-                <div class="item item-2"></div>
-                <div class="item item-3"></div>
-                <div class="item item-4"></div>
+            <div className="modalContainer">
+                <div className="item item-1"></div>
+                <div className="item item-2"></div>
+                <div className="item item-3"></div>
+                <div className="item item-4"></div>
             </div>
             </p>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleHide}>Click for Results</Button>
           </Modal.Footer>
-          {this.state.switchgit && <Redirect to={'/Result'}/> }
+          {this.state.switch && <Redirect to={'/Result'}/> }
         </Modal>
       </ButtonToolbar>
     );
