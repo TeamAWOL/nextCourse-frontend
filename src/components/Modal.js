@@ -40,7 +40,7 @@ class GameModal extends React.Component {
           dialogClassName="custom-modal"
         >
           <Modal.Header closeButton>
-            <Modal.Title id="ed-modal-title-lg">
+            <Modal.Title id="contained-modal-title-lg">
               Selecting Restaurant
             </Modal.Title>
           </Modal.Header>
