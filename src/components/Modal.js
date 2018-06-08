@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/Modal.css';
 import { Modal, ButtonToolbar, Button } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom'
 
 
 
@@ -12,7 +13,8 @@ class GameModal extends React.Component {
     this.handleHide = this.handleHide.bind(this);
 
     this.state = {
-      show: false
+      show: false,
+      switch: false
     };
   }
 
@@ -21,7 +23,7 @@ class GameModal extends React.Component {
   }
 
   handleHide() {
-    this.setState({ show: false });
+    this.setState({ switch: true });
   }
 
   render() {
@@ -55,6 +57,7 @@ class GameModal extends React.Component {
           <Modal.Footer>
             <Button onClick={this.handleHide}>Click for Results</Button>
           </Modal.Footer>
+          {this.state.switch && <Redirect to={'/Result'}/> }
         </Modal>
       </ButtonToolbar>
     );
