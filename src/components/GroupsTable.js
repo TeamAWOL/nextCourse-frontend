@@ -44,7 +44,6 @@ class GroupsTable extends Component {
                   <Link to={`/EditGroup/${group.name}`}><Button bsSize="sm" bsStyle="primary">Edit</Button></Link>
 
                   <Button href="../Feed" id={group.id} onClick={this.handleDeleteClick.bind(this)} bsStyle="danger">Delete</Button>
-                  <Button href="../Feed" id={group.id} onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.handleDeleteClick.bind(this) } } bsStyle="danger">Delete</Button>
                 </ButtonGroup>
               </ListGroupItem>
             )
