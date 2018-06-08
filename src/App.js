@@ -11,7 +11,7 @@ import EditGroup from './pages/EditGroup'
 import Yelp from './pages/YelpAPITest'
 import Feed from './pages/Feed'
 
-import Header from './components/Header'
+
 
 import About from './pages/About';
 import Team from './pages/Team';
