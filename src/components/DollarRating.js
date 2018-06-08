@@ -8,14 +8,13 @@ class DollarRating extends React.Component {
     return (
       <div>
         <div className="select-price">
-          <p>Select Price: </p>
+          Select Price:&nbsp;
         </div>
         <div className="StarRating">
           <StarRating
             name="price_range"
             renderStarIcon={() => <span>$</span>}
             starCount={4}
-            value={1}
             starColor= "green"
             emptyStarColor="grey"
             onStarClick={this.props.handler}
