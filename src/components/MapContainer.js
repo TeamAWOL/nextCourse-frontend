@@ -8,22 +8,20 @@ export class MapContainer extends React.Component {
   render() {
     return (
         <Map
-             google={this.props.google}
-             initialCenter={{
-                              lat: this.props.lat,
-                              lng: this.props.lng
-                            }}
-             zoom={15}
-             onClick={this.onMapClicked}
+           google={this.props.google}
+           initialCenter={{
+                            lat: this.props.lat,
+                            lng: this.props.lng
+                          }}
+           zoom={15}
+           onClick={this.onMapClicked}
          >
-             <Marker onClick={this.onMarkerClick}
-                        name={'Current location'} />
+         <Marker onClick={this.onMarkerClick} name={'Current location'} />
+          <InfoWindow onClose={this.onInfoWindowClose}>
+              <div>
 
-                <InfoWindow onClose={this.onInfoWindowClose}>
-                    <div>
-
-                    </div>
-                </InfoWindow>
+              </div>
+          </InfoWindow>
        </Map>
     )
   }
