@@ -7,7 +7,7 @@ export class MapContainer extends React.Component {
 
   render() {
     return (
-      <Map
+        <Map
            google={this.props.google}
            initialCenter={{
                             lat: this.props.lat,
@@ -15,16 +15,14 @@ export class MapContainer extends React.Component {
                           }}
            zoom={15}
            onClick={this.onMapClicked}
-       >
-           <Marker onClick={this.onMarkerClick}
-                      name={'Current location'} />
+         >
+         <Marker onClick={this.onMarkerClick} name={'Current location'} />
+          <InfoWindow onClose={this.onInfoWindowClose}>
+              <div>
 
-              <InfoWindow onClose={this.onInfoWindowClose}>
-                  <div>
-
-                  </div>
-              </InfoWindow>
-     </Map>
+              </div>
+          </InfoWindow>
+       </Map>
     )
   }
 

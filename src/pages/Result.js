@@ -54,23 +54,24 @@ class Result extends Component {
 
     return (
         <div>
-        <h1> {this.state.result.name} </h1>
-        <br/>
-         Name: <a href={this.state.result.url} > {this.state.result.name} </a>
-        <br/>
-         price: {this.state.result.price}
-        <br/>
-         Phone: {this.state.result.display_phone}
-        <br/>
-         Address: {this.state.address}
-        <br/>
-        <br/>
-        <div>
-          <img src={this.state.result.image_url} width="600" />
-        </div>
-        {this.state.lng &&
-          <MapContainer lng={this.state.lng} lat={this.state.lat}/>
-        }
+		        <h1 id="result-head"> {this.state.result.name} </h1>
+		        <div id="info-section" className="col-md-6 pull-left">
+			        <br/>
+			         Price: {this.state.result.price}
+			        <br/>
+			         Phone: {this.state.result.display_phone}
+			        <br/>
+			         Address: {this.state.address}
+			        <br/>
+			        <br/>
+		          <img id="pic-section" src={this.state.result.image_url} /><br/>
+							View on <a href={this.state.result.url} > yelp </a>
+						</div>
+						<div id="map-section" className="col-md-6">
+		        {this.state.lng &&
+		          <MapContainer lng={this.state.lng} lat={this.state.lat}/>
+		        }
+						</div>
         </div>
     )
   }

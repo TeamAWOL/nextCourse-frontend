@@ -2,6 +2,9 @@
   background-color: steelblue;
 }
 #logo {
-  width: 30%;
+  width: 175px;
   height: auto;
+}
+html {
+  margin-bottom: 50px
 }
