@@ -23,7 +23,7 @@ class CustomTeam extends Component {
             <Col xs={4} md={2}>
               <Thumbnail src= { Mondo } alt="Armando Nunez">
                 <h3>Armando Nunez</h3>
-                <p>Co-Founder</p>
+                <p>CODE MASTA</p>
               </Thumbnail>
             </Col>
             <Col xs={4} md={2}>

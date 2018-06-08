@@ -27,8 +27,8 @@ class Feed extends Component {
   render() {
     return (
       <div id="feed-page">
-        <div id="account-info">
-        <Jumbotron>WELCOME BACK {this.state.user.first_name}</Jumbotron>
+        <div>
+        <Jumbotron id="account-info">WELCOME BACK {this.state.user.first_name}</Jumbotron>
         </div>
         <br/>
         <div id="groups-area" className="col-md-6">
