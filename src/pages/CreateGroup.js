@@ -6,6 +6,8 @@ import AddFriend from '../components/AddFriend';
 import {add_user_group} from '../api/GroupAPI';
 import WithAuth from '../api/WithAuth'
 import { Redirect } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
+
 
 class CreateGroup extends Component {
   constructor(props){
@@ -42,17 +44,6 @@ class CreateGroup extends Component {
         POSTsuccess: true
       })
     })
-
-
-    // e.preventDefault()
-    // this.Auth.create(this.state.group_name,
-    //                  this.state.price_range,
-    //                  this.state.member_user_names,
-    //                  this.state.location)
-    // .then(res =>{
-    //   this.props.history.replace('/')
-    // })
-    // .catch(err =>{ alert(err) })
   }
 
   render() {
@@ -70,7 +61,6 @@ class CreateGroup extends Component {
                 type="text"
                 onChange={this.handleInput.bind(this)}
               />
-
               <input
                 className="form-item1"
                 placeholder="Enter Preferred Location"
@@ -79,13 +69,15 @@ class CreateGroup extends Component {
                 onChange={this.handleInput.bind(this)}
               />
             </div>
-            <AddFriend/>
-            <br/>
             <DollarRating handler={this.handlePriceRangeChange.bind(this)}/>
-            <div
+            <AddFriend/>
+
+
+
+            <Button
               className="form-submit" onClick={this.handleSubmit.bind(this)}>
-              Save
-            </div>
+              Submit
+            </Button>
           </form>
           {this.state.POSTsuccess && <Redirect to={"/feed"} /> }
         </div>
