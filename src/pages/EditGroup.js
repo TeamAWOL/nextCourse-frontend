@@ -31,6 +31,8 @@ class EditGroup extends Component {
      this.setState({form})
   }
 
+  handleAddFriend
+
   handleInput(e){
     let {form} = this.state
     form[e.target.name] = e.target.value
