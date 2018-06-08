@@ -16,17 +16,17 @@ class CustomHeader extends React.Component {
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav>
-                <NavItem eventKey={1} href="./login">
+                <NavItem eventKey={4} className='pull-right' href="./logout">
+                  Log Out
+                </NavItem>
+                <NavItem eventKey={1} className='pull-right' href="./login">
                   Login
                 </NavItem>
-                <NavItem eventKey={2} href="./sign_up">
+                <NavItem eventKey={2} className='pull-right' href="./sign_up">
                   Register
                 </NavItem>
-                <NavItem eventKey={3} href="./Feed">
+                <NavItem eventKey={3} className='pull-right' href="./Feed">
                   Feed
-                </NavItem>
-                <NavItem eventKey={4} className='pull-right' href="./login">
-                  Log Out
                 </NavItem>
               </Nav>
             </Navbar.Collapse>

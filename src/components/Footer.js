@@ -8,7 +8,6 @@ class CustomFooter extends React.Component {
       <div className="footer">
 
 <Navbar fixedBottom>
-
   <Nav>
     <NavItem eventKey={1} href="./about">
       About Us

@@ -12,23 +12,23 @@ import { Button } from 'react-bootstrap'
 class CreateGroup extends Component {
   constructor(props){
     super(props)
-
-
     this.state={
       form: {
         name: '',
         location:'',
-        price_range:''
+        price_range:'',
+        userId: '',
+        friends: [],
         },
         POSTsuccess: false,
     }
   }
 
   handlePriceRangeChange(e){
-     let {form} = this.state
+    let {form} = this.state
 
-     form['price_range'] = e
-     this.setState({form})
+    form['price_range'] = e
+    this.setState({form})
   }
 
   handleInput(e){
@@ -38,6 +38,7 @@ class CreateGroup extends Component {
   }
 
   handleSubmit(e){
+    console.log(this.state);
     add_user_group(this.props.userId, this.state.form)
     .then(resp => {
       this.setState({
@@ -46,7 +47,16 @@ class CreateGroup extends Component {
     })
   }
 
+  canBeSubmitted() {
+    let { form } = this.state
+    return (
+      form.name.length > 0 &&
+      form.location.length > 0
+    )
+  }
+
   render() {
+    const isEnabled=this.canBeSubmitted();
     return (
       <div className="form-body">
         <div className="card">
@@ -60,6 +70,7 @@ class CreateGroup extends Component {
                 name="name"
                 type="text"
                 onChange={this.handleInput.bind(this)}
+                required
               />
               <input
                 className="form-item1"
@@ -69,13 +80,13 @@ class CreateGroup extends Component {
                 onChange={this.handleInput.bind(this)}
               />
             </div>
+
             <DollarRating handler={this.handlePriceRangeChange.bind(this)}/>
+
             <AddFriend/>
 
-
-
             <Button
-              className="form-submit" onClick={this.handleSubmit.bind(this)}>
+              className="form-submit" disabled={!isEnabled} onClick={this.handleSubmit.bind(this)}>
               Submit
             </Button>
           </form>
