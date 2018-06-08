@@ -46,19 +46,13 @@ class GameModal extends React.Component {
           </Modal.Header>
           <Modal.Body>
             <p>
-<<<<<<< HEAD
-            <div class="ModalContainer">
-                <div class="item item-1"></div>
-                <div class="item item-2"></div>
-                <div class="item item-3"></div>
-                <div class="item item-4"></div>
-=======
+
             <div className="modalContainer">
                 <div className="item item-1"></div>
                 <div className="item item-2"></div>
                 <div className="item item-3"></div>
                 <div className="item item-4"></div>
->>>>>>> 42d6a1f6913e5d5af99b130220a54fd6fd98a40e
+
             </div>
             </p>
           </Modal.Body>

@@ -35,7 +35,7 @@ class AddFriend extends Component {
                       <button
                         onClick={() => formApi.removeValue('friends', i)}
                         type="button"
-                        className="mb-4 btn btn-danger">-</button>
+                        className="mb-4 btn btn-danger">- </button>
                     </div>
                   ))}
                   <button
