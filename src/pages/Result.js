@@ -23,11 +23,11 @@ class Result extends Component {
 
   componentWillMount() {
 
-    let group_name='poker'
-		let friend_name='Friend1'
-    let type = 'korean'
-    let location = 'San diego'
-    let price_range = '1'
+    let group_name='AWOL BOYZ'
+		let friend_name='Mando'
+    let type = 'mexican'
+    let location = 'san diego'
+    let price_range = '2'
 
     get_next_course(this.props.userId,group_name,friend_name,type,location,price_range)
       .then(json => {

@@ -12,7 +12,6 @@ import Yelp from './pages/YelpAPITest'
 import Feed from './pages/Feed'
 
 
-
 import About from './pages/About';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
