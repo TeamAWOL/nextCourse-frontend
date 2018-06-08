@@ -1,5 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import logo from '../images/logo.png'
+
 
 class CustomHeader extends React.Component {
   render() {
@@ -8,7 +10,7 @@ class CustomHeader extends React.Component {
         <Navbar  collapseOnSelect>
             <Navbar.Header>
               <Navbar.Brand>
-                <a href='./login'>NextCourse</a>
+                <a href='./login'><img id="logo" src={logo} /></a>
               </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>
