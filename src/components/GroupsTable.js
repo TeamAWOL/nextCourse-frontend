@@ -32,7 +32,7 @@ class GroupsTable extends Component {
       <div>
         <h1><strong>Groups</strong></h1>
         <li className="list-group-item green"><span>&nbsp;</span>
-          <Button href="../CreateGroup" id="addGroup" className="green"><i className="fas fa-plus-square"></i></Button>
+          <Button href="../CreateGroup" id="addGroup" className="green">Add new group <i class="far fa-plus-square"></i></Button>
         </li>
         <ListGroup className="list-group">
           {this.state.groups.map((group, index) =>{
