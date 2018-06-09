@@ -25,7 +25,7 @@ class App extends Component {
         <Switch>
 
           <Route exact path="/login" component={Login}/>
-          <Route exact path="/logout" render={(props) => <Login logout="YES"/> } />
+          <Route exact path="/logout" render={(props) => <Login logout="YES"/>}/>
           <Route exact path="/sign_up" component={Sign_up}/>} />
           <Route exact path="/CreateGroup" component={CreateGroup}/>} />
           <Route path='/EditGroup/:id' component={EditGroup}/>} />

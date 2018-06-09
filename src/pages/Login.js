@@ -16,7 +16,7 @@ class Login extends Component {
   componentWillMount() {
 
     if (this.props.logout)
-      if (this.props.logout == 'YES')
+      if (this.props.logout === 'YES')
          this.Auth.logout()
   }
 

@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import {
-	Grid, Col, Row, ListGroup, ListGroupItem
-} from 'react-bootstrap'
 
 import '../css/Result.css';
 import WithAuth from '../api/WithAuth'

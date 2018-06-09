@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {get_next_course} from '../api/YelpAPI'
 import {update_user,delete_user} from '../api/UserAPI';
 import {get_user_groups,add_user_group,delete_user_group,update_user_group} from '../api/GroupAPI'
 import {get_user_outings,add_user_outing,delete_user_outing,update_user_outing} from '../api/OutingAPI'
