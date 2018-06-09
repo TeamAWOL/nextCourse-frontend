@@ -28,10 +28,8 @@ class GameModal extends React.Component {
 
   render() {
     return (
-      <ButtonToolbar>
-        <Button bsStyle="primary" onClick={this.handleShow}>
-        Play Game
-        </Button>
+      <div>
+        <Button id="play_text" bsSize="small" bsStyle="success" onClick={this.handleShow}>Play</Button>
 
         <Modal
           {...this.props}
@@ -59,7 +57,7 @@ class GameModal extends React.Component {
           </Modal.Footer>
           {this.state.switch && <Redirect to={'/Result'}/> }
         </Modal>
-      </ButtonToolbar>
+      </div>
     );
   }
 }

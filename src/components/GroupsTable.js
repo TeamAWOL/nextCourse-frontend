@@ -3,6 +3,8 @@ import { Button, ButtonGroup, Grid, Col, Row, ListGroup, ListGroupItem } from 'r
 import WithAuth from '../api/WithAuth'
 import { get_user_groups, delete_user_group } from '../api/GroupAPI'
 import { Link } from 'react-router-dom'
+import GameModal from '../components/Modal.js'
+
 
 class GroupsTable extends Component {
   constructor(props){
@@ -23,7 +25,7 @@ class GroupsTable extends Component {
   }
 
   handleDeleteClick(e) {
-    delete_user_group(e.target.id)
+    delete_user_group(e.target.name)
     console.log("yoooo");
   }
 
@@ -38,12 +40,13 @@ class GroupsTable extends Component {
           {this.state.groups.map((group, index) =>{
             return (
               <ListGroupItem className="list-item" key={index}>
-                <span>{group.name}</span>
-                <ButtonGroup className="pull-right" bsSize="small">
-                  <Link to={`/EditGroup/${group.name}`}><Button bsSize="sm" bsStyle="success">Play</Button></Link>
-                  <Link to={`/EditGroup/${group.name}`}><Button bsSize="sm" bsStyle="primary">Edit</Button></Link>
+                <h4>{group.name}</h4>
+                <ButtonGroup className="pull-right">
+                <Button href="../Feed" name={group.id} onClick={this.handleDeleteClick.bind(this)} bsSize="small" bsStyle="danger">Delete</Button>
+                <Link to={`/EditGroup/${group.name}`}><Button bsSize="small" bsStyle="primary">Edit</Button></Link>
+                <Button bsSize="small" bsStyle="success">Play</Button>
+                <div><GameModal /></div>
 
-                  <Button href="../Feed" id={group.id} onClick={this.handleDeleteClick.bind(this)} bsStyle="danger">Delete</Button>
                 </ButtonGroup>
               </ListGroupItem>
             )
@@ -71,7 +74,7 @@ export default WithAuth(GroupsTable);
 //         <ul className="list-group">
 //           <li className="list-group-item">
 //             <span>Family</span>
-//             <ButtonGroup className="pull-right" bsSize="small">
+//             <ButtonGroup className="pull-right">
 //               <Button bsStyle="success">Play</Button>
 //               <Button bsStyle="primary">Edit</Button>
 //               <Button bsStyle="danger">Delete</Button>
