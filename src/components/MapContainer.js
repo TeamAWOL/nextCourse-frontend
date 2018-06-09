@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import '../css/MapContainer.css'
 
-export class MapContainer extends React.Component {
+export class MapContainer extends Component {
 
   render() {
     return (

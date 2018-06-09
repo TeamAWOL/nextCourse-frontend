@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import StarRating from 'react-star-rating-component';
 import '../css/CreateGroup.css';
 
