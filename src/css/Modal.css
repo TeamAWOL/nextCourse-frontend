@@ -84,3 +84,8 @@
 .modal-title {
   text-align: center;
 }
+
+#play_button {
+  display: inline;
+  float: left;
+}

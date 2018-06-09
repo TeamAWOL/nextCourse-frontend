@@ -17,8 +17,9 @@
   background-color: #F1F1F1;
 }
 
-#groups-area span {
+#groups-area h4 {
 font-size: 25px;
+display: inline;
 }
 
 #recents-area {
