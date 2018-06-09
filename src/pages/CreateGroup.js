@@ -24,10 +24,10 @@ class CreateGroup extends Component {
   }
 
   handlePriceRangeChange(e){
-     let {form} = this.state
+    let {form} = this.state
 
-     form['price_range'] = e
-     this.setState({form})
+    form['price_range'] = e
+    this.setState({form})
   }
 
   handleInput(e){
@@ -90,7 +90,16 @@ class CreateGroup extends Component {
     })
   }
 
+  canBeSubmitted() {
+    let { form } = this.state
+    return (
+      form.name.length > 0 &&
+      form.location.length > 0
+    )
+  }
+
   render() {
+    const isEnabled=this.canBeSubmitted();
     return (
       <div className="form-body">
         <div className="card">
@@ -104,6 +113,7 @@ class CreateGroup extends Component {
                 name="name"
                 type="text"
                 onChange={this.handleInput.bind(this)}
+                required
               />
               <input
                 className="form-item1"
@@ -118,7 +128,7 @@ class CreateGroup extends Component {
             <AddFriend updateFriends={this.updateFriends}/>
 
             <Button
-              className="form-submit" onClick={this.handleSubmit.bind(this)}>
+              className="form-submit" disabled={!isEnabled} onClick={this.handleSubmit.bind(this)}>
               Submit
             </Button>
           </form>

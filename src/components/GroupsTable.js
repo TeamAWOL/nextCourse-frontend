@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
-import { Button, ButtonGroup, Grid, Col, Row, ListGroup, ListGroupItem } from 'react-bootstrap'
+import '../css/Modal.css';
 import WithAuth from '../api/WithAuth'
-import { get_user_groups } from '../api/GroupAPI'
-import { Link } from 'react-router-dom'
+import { Button, ButtonGroup, Grid, Col, Row, ListGroup, ListGroupItem, Modal } from 'react-bootstrap'
+import { get_user_groups, delete_user_group } from '../api/GroupAPI'
+import { Link, Redirect } from 'react-router-dom'
+
+
+
 
 class GroupsTable extends Component {
   constructor(props){
     super(props)
+    this.handleShow = this.handleShow.bind(this);
+    this.handleHide = this.handleHide.bind(this);
+
     this.state = {
-      groups: []
-    }
+      groups: [],
+      show: false,
+      redirect: false
+    };
   }
 
   componentWillMount() {
@@ -22,9 +31,17 @@ class GroupsTable extends Component {
     )
   }
 
-  deleteHandler(i, e) {
-    e.preventDefault()
-    this.props.onDelete(this.props.blogPosts[i].id)
+  handleDeleteClick(e) {
+    delete_user_group(e.target.name)
+    console.log("yoooo");
+  }
+
+  handleShow() {
+    this.setState({ show: true });
+  }
+
+  handleHide() {
+    this.setState({ redirect: true });
   }
 
   render() {
@@ -32,26 +49,48 @@ class GroupsTable extends Component {
       <div>
         <h1><strong>Groups</strong></h1>
         <li className="list-group-item green"><span>&nbsp;</span>
-          <Button href="../CreateGroup" id="addGroup" className="green"><i className="fas fa-plus-square"></i></Button>
+          <Button href="../CreateGroup" id="addGroup" className="green">Add new group <i class="far fa-plus-square"></i></Button>
         </li>
         <ListGroup className="list-group">
           {this.state.groups.map((group, index) =>{
             return (
               <ListGroupItem className="list-item" key={index}>
-                <span>{group.name}</span>
-                <ButtonGroup className="pull-right" bsSize="small">
-                  <Button href="../Game" bsStyle="success">Play</Button>
-
-                  <Link to={`/EditGroup/${group.name}`} > <Button bsStyle="primary">Edit</Button>
-                  </Link>
-
-                  <Button href="#" bsStyle="danger">Delete</Button>
-                  {/* <btn onClick={this.deleteHandler.bind(this, i)} className="btn btn-danger btn-sm">Delete</btn> */}
+                <h4>{group.name}</h4>
+                <ButtonGroup className="pull-right">
+                <Button href="../Feed" name={group.id} onClick={this.handleDeleteClick.bind(this)} bsSize="small" bsStyle="danger">Delete</Button>
+                <Link to={`/EditGroup/${group.name}`}><Button className="pull-left" bsSize="small" bsStyle="primary">Edit</Button></Link>
+                <Button id="play_text" bsSize="small" bsStyle="success" onClick={this.handleShow}>Play</Button>
                 </ButtonGroup>
               </ListGroupItem>
             )
           })}
         </ListGroup>
+        <Modal
+          {...this.props}
+          show={this.state.show}
+          onHide={this.handleHide}
+          dialogClassName="custom-modal"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title-lg">
+              Selecting Restaurant
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>
+            <div className="modalContainer">
+                <div className="item item-1"></div>
+                <div className="item item-2"></div>
+                <div className="item item-3"></div>
+                <div className="item item-4"></div>
+            </div>
+            </p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.handleHide}>Click for Results</Button>
+          </Modal.Footer>
+          {this.state.redirect && <Redirect to={'/Result'}/> }
+        </Modal>
       </div>
     )
   }
@@ -74,7 +113,7 @@ export default WithAuth(GroupsTable);
 //         <ul className="list-group">
 //           <li className="list-group-item">
 //             <span>Family</span>
-//             <ButtonGroup className="pull-right" bsSize="small">
+//             <ButtonGroup className="pull-right">
 //               <Button bsStyle="success">Play</Button>
 //               <Button bsStyle="primary">Edit</Button>
 //               <Button bsStyle="danger">Delete</Button>

@@ -1,8 +1,27 @@
 import React, { Component } from 'react';
-import { Table } from 'react-bootstrap';
+import WithAuth from '../api/WithAuth'
+import { Table, ListGroupItem } from 'react-bootstrap';
+import { get_user_outings } from '../api/OutingAPI'
+
 
 class RecentOutings extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      outings: []
+    }
+  }
 
+  componentWillMount() {
+    get_user_outings(this.props.userId)
+    .then(APIoutings => {
+      this.setState({
+        outings:APIoutings.outings
+      })
+      console.log(this.state.outings);
+    }
+    )
+  }
   render() {
     return (
       <div>
@@ -17,42 +36,17 @@ class RecentOutings extends Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Work Friends</td>
-              <td>Jake</td>
-              <td colSpan="2">Sushi Stop</td>
-              <td>04/20/15</td>
-            </tr>
-            <tr>
-              <td>Poker Buds</td>
-              <td>Mark</td>
-              <td colSpan="2">Ottos burgers</td>
-              <td>04/20/16</td>
-            </tr>
-            <tr>
-              <td>Family</td>
-              <td>Jacob</td>
-              <td colSpan="2">McDonalds</td>
-              <td>04/20/17</td>
-            </tr>
-            <tr>
-              <td>Poker Buds</td>
-              <td>Jacob</td>
-              <td colSpan="2">Taco Bell</td>
-              <td>04/20/18</td>
-            </tr>
-            <tr>
-              <td>Golf Pals</td>
-              <td>Tony</td>
-              <td colSpan="2">Jack in the Box</td>
-              <td>04/20/19</td>
-            </tr>
-            <tr>
-              <td>Family</td>
-              <td>Tony</td>
-              <td colSpan="2">McDonalds</td>
-              <td>04/20/20</td>
-            </tr>
+            {this.state.outings.map((outing, index) =>{
+              return (
+                  <tr key={index}>
+                    <td>{outing.winning_group}</td>
+                    <td>{outing.winner}</td>
+                    <td colSpan="2">{outing.winning_restaurant}</td>
+                    <td>{outing.created_at.slice(0,10)}</td>
+                  </tr>
+              )
+            })}
+
           </tbody>
         </Table>
       </div>
@@ -63,4 +57,4 @@ class RecentOutings extends Component {
 
 
 }
-export default RecentOutings;
+export default WithAuth(RecentOutings);

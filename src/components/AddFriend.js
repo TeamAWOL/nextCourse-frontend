@@ -186,7 +186,7 @@ class AddFriend extends Component {
                       <button
                         onClick={() => this.handleFriendDelete(formApi,i)}
                         type="button"
-                        className="mb-4 btn btn-danger">-</button>
+                        className="mb-4 btn btn-danger">- </button>
                     </div>
                   ))}
 

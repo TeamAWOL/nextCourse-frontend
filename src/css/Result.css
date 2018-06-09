@@ -1,0 +1,22 @@
+#result-head{
+  text-align: center;
+  font-size: 50px;
+}
+
+#info-section {
+  text-align: center;
+  height: 50vh;
+  width: 50vw;
+  display: block;
+  font-size: 22px;
+}
+
+#pic-section {
+  width: auto;
+  height: 40vh;
+}
+
+#map-section {
+  width: 45vw;;
+  height: 70vh;
+}
