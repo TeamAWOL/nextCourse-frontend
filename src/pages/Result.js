@@ -20,13 +20,7 @@ class Result extends Component {
 
   componentWillMount() {
 
-    let group_name='AWOL BOYZ'
-		let friend_name='Mando'
-    let type = 'mexican'
-    let location = 'san diego'
-    let price_range = '2'
-
-    get_next_course(this.props.userId,group_name,friend_name,type,location,price_range)
+    get_next_course(this.props.userId,this.props.groupId)
       .then(json => {
         console.log(json);
         this.setState({
