@@ -9,7 +9,6 @@ export default class AuthService {
 
     }
 
-
     login(email, password) {
       return this.fetch(`${this.domain}/login_token`, { // Our backend endpoint
         method: 'POST',
@@ -81,6 +80,20 @@ export default class AuthService {
     // Removes the token
     logout() {
       localStorage.removeItem('id_token');
+    }
+
+    removeGroupId()
+    {
+      localStorage.removeItem('id_group')
+    }
+
+    setGroupId(groupId)
+    {
+        localStorage.setItem('id_group', groupId)
+    }
+
+    getGroupId() {
+         return localStorage.getItem('id_group')
     }
 
     // We can decode the token and find the user's ID for subsequent calls to the server

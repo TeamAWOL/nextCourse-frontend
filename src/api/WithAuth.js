@@ -6,9 +6,17 @@ export default function withAuth(WrappedComponent) {
 	return class AuthWrapped extends Component {
 		constructor() {
 			super();
+			this.setSelectedGroupId = this.setSelectedGroupId.bind(this);
+
 			this.state = {
-				userId: ''
+				userId: '',
+			  groupId: '',
 			}
+		}
+
+    setSelectedGroupId(groupId)
+		{
+       Auth.setGroupId(groupId)
 		}
 
 		componentWillMount() {
@@ -18,9 +26,11 @@ export default function withAuth(WrappedComponent) {
 			} else {
 				try {
 					const userId = Auth.getUserId()
+					const groupId = Auth.getGroupId()
 
 					this.setState({
-						userId: userId
+						userId: userId,
+						groupId: groupId,
 					})
 				}
 				catch(err) {
@@ -36,6 +46,8 @@ export default function withAuth(WrappedComponent) {
 					<WrappedComponent
 						history={this.props.history}
 						userId={this.state.userId}
+						groupId={this.state.groupId}
+						setSelectedGroupId={this.setSelectedGroupId}
 					/>
 				)
 			} else {

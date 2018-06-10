@@ -11,13 +11,13 @@ import { Link, Redirect } from 'react-router-dom'
 class GroupsTable extends Component {
   constructor(props){
     super(props)
-    this.handleShow = this.handleShow.bind(this);
+    this.handlePlayClick = this.handlePlayClick.bind(this);
     this.handleHide = this.handleHide.bind(this);
 
     this.state = {
       groups: [],
       show: false,
-      redirect: false
+      redirect: false,
     };
   }
 
@@ -31,13 +31,21 @@ class GroupsTable extends Component {
     )
   }
 
+
   handleDeleteClick(e) {
     delete_user_group(e.target.name)
-    console.log("yoooo");
   }
 
-  handleShow() {
-    this.setState({ show: true });
+  handlePlayClick(e) {
+
+    console.log("######  " + e.target.name)
+
+    this.props.setSelectedGroupId(e.target.name)
+
+    this.setState({
+      show: true
+    });
+
   }
 
   handleHide() {
@@ -57,9 +65,9 @@ class GroupsTable extends Component {
               <ListGroupItem className="list-item" key={index}>
                 <h4>{group.name}</h4>
                 <ButtonGroup className="pull-right">
-                <Button href="../Feed" name={group.id} onClick={this.handleDeleteClick.bind(this)} bsSize="small" bsStyle="danger">Delete</Button>
-                <Link to={`/EditGroup/${group.name}`}><Button className="pull-left" bsSize="small" bsStyle="primary">Edit</Button></Link>
-                <Button id="play_text" bsSize="small" bsStyle="success" onClick={this.handleShow}>Play</Button>
+                  <Button href="../Feed" name={group.id} onClick={this.handleDeleteClick.bind(this)} bsSize="small" bsStyle="danger">Delete</Button>
+                  <Link to={`/EditGroup/${group.name}`}><Button className="pull-left" bsSize="small" bsStyle="primary">Edit</Button></Link>
+                  <Button id="play_text" bsSize="small" name={group.id} bsStyle="success" onClick={this.handlePlayClick.bind(this)}>Play</Button>
                 </ButtonGroup>
               </ListGroupItem>
             )
@@ -89,14 +97,11 @@ class GroupsTable extends Component {
           <Modal.Footer>
             <Button onClick={this.handleHide}>Click for Results</Button>
           </Modal.Footer>
-          {this.state.redirect && <Redirect to={'/Result'}/> }
+          {this.state.redirect && <Redirect to={'/Result'} /> }
         </Modal>
       </div>
     )
   }
-
-
-
 
 }
 export default WithAuth(GroupsTable);
