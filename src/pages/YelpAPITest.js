@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {update_user,delete_user} from '../api/UserAPI';
-import {get_user_groups,add_user_group,delete_user_group,update_user_group} from '../api/GroupAPI'
+import {get_user_group,get_user_groups,add_user_group,delete_user_group,update_user_group} from '../api/GroupAPI'
 import {get_user_outings,add_user_outing,delete_user_outing,update_user_outing} from '../api/OutingAPI'
 import {get_group_friends,add_group_friend,delete_group_friend,update_group_friend} from '../api/FriendAPI'
 
@@ -43,7 +43,7 @@ class Yelp extends Component {
   handleGroupGet(e){
     e.preventDefault()
 
-    get_user_groups(this.props.userId)
+    get_user_group(89)
     .then(res =>{
       this.props.history.replace('/Yelp')
     })
