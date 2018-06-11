@@ -72,8 +72,8 @@ class Yelp extends Component {
 
   handleGroupUpdate(e){
     e.preventDefault()
-    	var group = {"id":"1","location":"Change5"}
-    update_user_group(group)
+    
+    update_user_group(1)
     .then(res =>{
       this.props.history.replace('/Yelp')
     })
