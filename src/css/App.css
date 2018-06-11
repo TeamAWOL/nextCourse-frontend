@@ -17,5 +17,7 @@ font: 24px montserrat;
   background-repeat: no-repeat;
   background-position: center center;
   opacity: 0.9;
-  color: #FF3030;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  min-height: 230px;
  }

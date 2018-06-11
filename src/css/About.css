@@ -1,8 +1,3 @@
-.jumbo {
-  text-align: center;
-}
-
-
 
 .about-body {
   text-align: left;
@@ -11,4 +6,10 @@
 .mv-statement {
   text-align: left;
 
+}
+
+.about-title {
+  text-align: center;
+  color: #FF3030;
+  font-weight: bold;
 }
