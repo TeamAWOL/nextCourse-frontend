@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import '../css/Modal.css';
 import WithAuth from '../api/WithAuth'
 import { Button, ButtonGroup, Grid, Col, Row, ListGroup, ListGroupItem, Modal } from 'react-bootstrap'
+import { BrowserRouter as Router, Route, Redirect, Link} from 'react-router-dom';
 import { get_user_groups, delete_user_group } from '../api/GroupAPI'
-import { Link, Redirect } from 'react-router-dom'
+import EditGroup from '../pages/EditGroup'
+
 
 
 
@@ -17,7 +19,8 @@ class GroupsTable extends Component {
     this.state = {
       groups: [],
       show: false,
-      redirect: false
+      redirect: false,
+      groupId: null
     };
   }
 
@@ -33,7 +36,11 @@ class GroupsTable extends Component {
 
   handleDeleteClick(e) {
     delete_user_group(e.target.name)
-    console.log("yoooo");
+  }
+
+  handleEditClick(e) {
+    this.setState({ groupId: e.target.name });
+    console.log(this.state.groupId);
   }
 
   handleShow() {
@@ -58,8 +65,14 @@ class GroupsTable extends Component {
                 <h4>{group.name}</h4>
                 <ButtonGroup className="pull-right">
                 <Button href="../Feed" name={group.id} onClick={this.handleDeleteClick.bind(this)} bsSize="small" bsStyle="danger">Delete</Button>
-                <Link to={`/EditGroup/${group.name}`}><Button className="pull-left" bsSize="small" bsStyle="primary">Edit</Button></Link>
+                <Link to={`/EditGroup/${group.id}`}><Button className="pull-left" bsSize="small" bsStyle="primary">Edit</Button></Link>
+                <Router>
+                  <Route exact path="/EditGroup" render={(props) => <EditGroup groupId={this.state.groupId}/>} />
+                </Router>
+
                 <Button id="play_text" bsSize="small" bsStyle="success" onClick={this.handleShow}>Play</Button>
+                <Button name={group.id} bsSize="small" bsStyle="primary" onClick={this.handleEditClick.bind(this)}>Edit</Button>
+
                 </ButtonGroup>
               </ListGroupItem>
             )
