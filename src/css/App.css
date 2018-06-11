@@ -5,3 +5,19 @@
 html {
   margin-bottom: 50px
 }
+
+* {
+font: 24px montserrat;
+}
+
+
+.jumbotron {
+  background: url(../images/friends-cafe.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.9;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  min-height: 230px;
+ }

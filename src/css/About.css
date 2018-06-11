@@ -1,13 +1,26 @@
-.jumbo {
-  text-align: center;
-}
-
-
-.about-body {
-  text-align: left;
+.about {
+  align: justify;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: justify;
 }
 
 .mv-statement {
-  text-align: left;
+  text-align: justify;
+  margin-left: 60px;
+  margin-right: 60px;
 
+}
+
+.about-title {
+  text-align: justify;
+  color: #FF3030;
+  font-weight: bold;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.about-body {
+  margin-left: 60px;
+  margin-right: 60px;
 }

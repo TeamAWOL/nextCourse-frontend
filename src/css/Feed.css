@@ -1,20 +1,5 @@
-#feed-page {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background-color: #E93048;
-}
-
-#feed-page h1{
-  font-size: 55px;
-}
-
-#account-info {
-  font-size: 80px;
-}
-
 #groups-area {
-  background-color: #F1F1F1;
+  background-color: #white;
 }
 
 #groups-area h4 {
@@ -23,7 +8,7 @@ display: inline;
 }
 
 #recents-area {
-  background-color: #F1F1F1;
+  background-color: #white;
 }
 
 .green {
@@ -44,4 +29,16 @@ th {
 
 td {
   font-size: 20px;
+}
+.feed-title {
+  text-align: center;
+  color: #FF3030;
+  font-weight: bold;
+}
+
+.jumbo {
+  align: justify;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: justify;
 }
