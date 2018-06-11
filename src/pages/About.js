@@ -12,11 +12,11 @@ class About extends Component {
           <Jumbotron>
           </Jumbotron>
         </div>
-      
+
         <div className="about-title">
           <h1>The Feed Me Story</h1>
         <p>
-          Four Friends Wanted to Make Restaurant Selections Easier
+          Four Foodies Wanted to Make Restaurant Selections Easier
         </p>
         </div>
         <div className='about-body'>

@@ -1,6 +1,8 @@
-
-.about-body {
-  text-align: left;
+.about {
+  align: justify;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: justify;
 }
 
 .mv-statement {
@@ -9,7 +11,7 @@
 }
 
 .about-title {
-  text-align: center;
+  text-align: justify;
   color: #FF3030;
   font-weight: bold;
 }

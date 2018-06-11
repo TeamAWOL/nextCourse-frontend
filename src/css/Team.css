@@ -1,6 +1,19 @@
-.team-page {
+.team {
+  align: justify;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: justify;
+}
+
+.team-title {
+  text-align: center;
+  color: #FF3030;
+  font-weight: bold;
+}
+
+.team-body {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
+  margin-left: 18%;
+
+
 }

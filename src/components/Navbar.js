@@ -19,11 +19,11 @@ class CustomHeader extends React.Component {
                 <NavItem eventKey={4} className='pull-right' href="./logout">
                   Log Out
                 </NavItem>
-                <NavItem eventKey={1} className='pull-right' href="./login">
-                  Login
-                </NavItem>
                 <NavItem eventKey={2} className='pull-right' href="./sign_up">
                   Register
+                </NavItem>
+                <NavItem eventKey={1} className='pull-right' href="./login">
+                  Login
                 </NavItem>
                 <NavItem eventKey={3} className='pull-right' href="./Feed">
                   Feed
