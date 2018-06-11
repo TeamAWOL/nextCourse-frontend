@@ -9,6 +9,7 @@ import { Redirect } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 
 
+
 class EditGroup extends Component {
   constructor(props){
     super(props)
@@ -21,8 +22,11 @@ class EditGroup extends Component {
         price_range:''
         },
         POSTsuccess: false,
+        group:{},
+        friends:[]
     }
   }
+
 
   handlePriceRangeChange(e){
      let {form} = this.state
@@ -47,6 +51,7 @@ class EditGroup extends Component {
   }
 
   render() {
+    console.log(this.props.groupId);
     return (
       <div className="form-body">
         <div className="card">

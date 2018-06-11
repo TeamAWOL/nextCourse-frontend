@@ -16,7 +16,7 @@ class CustomHeader extends React.Component {
             </Navbar.Header>
             <Navbar.Collapse>
               <Nav>
-                <NavItem eventKey={4} className='pull-right' href="../login">
+                <NavItem eventKey={4} className='pull-right' href="../logout">
                   Log Out
                 </NavItem>
                 <NavItem eventKey={1} className='pull-right' href="../login">

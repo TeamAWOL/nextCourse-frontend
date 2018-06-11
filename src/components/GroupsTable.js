@@ -72,15 +72,9 @@ class GroupsTable extends Component {
               <ListGroupItem className="list-item" key={index}>
                 <h4>{group.name}</h4>
                 <ButtonGroup className="pull-right">
-                <Button href="../Feed" name={group.id} onClick={this.handleDeleteClick.bind(this)} bsSize="small" bsStyle="danger">Delete</Button>
-                <Link to={`/EditGroup/${group.id}`}><Button className="pull-left" bsSize="small" bsStyle="primary">Edit</Button></Link>
-                <Router>
-                  <Route exact path="/EditGroup" render={(props) => <EditGroup groupId={this.state.groupId}/>} />
-                </Router>
-
-                <Button id="play_text" bsSize="small" bsStyle="success" onClick={this.handleShow}>Play</Button>
-                <Button name={group.id} bsSize="small" bsStyle="primary" onClick={this.handleEditClick.bind(this)}>Edit</Button>
-
+                  <Button href="../Feed" name={group.id} bsSize="small" bsStyle="danger" onClick={this.handleDeleteClick.bind(this)}>Delete</Button>
+                  <Button href="../EditGroup" name={group.id} bsSize="small" bsStyle="primary" onClick={this.handleEditClick.bind(this)}>Edit</Button>
+                  <Button name={group.id} bsSize="small" bsStyle="success" onClick={this.handlePlayClick.bind(this)}>Play</Button>
                 </ButtonGroup>
               </ListGroupItem>
             )
