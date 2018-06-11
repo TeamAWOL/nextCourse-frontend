@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import '../css/CreateGroup.css';
-import AuthService from '../api/AuthService';
 import DollarRating from '../components/DollarRating';
 import AddFriend from '../components/AddFriend';
 import {add_user_group} from '../api/GroupAPI';
+import {add_group_friend} from '../api/FriendAPI'
 import WithAuth from '../api/WithAuth'
 import { Redirect } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
@@ -16,11 +16,10 @@ class CreateGroup extends Component {
       form: {
         name: '',
         location:'',
-        price_range:'',
-        userId: '',
-        friends: [],
-        },
-        POSTsuccess: false,
+        price_range:''
+      },
+      friends : [],
+      POSTsuccess: false,
     }
   }
 
@@ -37,13 +36,57 @@ class CreateGroup extends Component {
     this.setState({ form })
   }
 
+
+  createGroupFriend(groupId){
+
+    var f = this.state.friends
+
+    f.map((element, i) => {
+      var objectKey = Object.keys(element)
+
+      element[objectKey[0]] = element[objectKey[0]].reduce(function(result, item) {
+          var key = Object.keys(item)[0];
+          result[key] = item[key];
+          return result;
+      }, {});
+
+    })
+
+    var ff = f.reduce(function(result, item) {
+        var key = Object.keys(item)[0];
+        result[key] = item[key];
+        return result;
+    }, {});
+
+    add_group_friend(groupId,ff)
+       .then(resp => {
+         this.setState({
+           POSTsuccess: true
+         })
+    }).catch(err =>{ alert(err) })
+
+  }
+
   handleSubmit(e){
-    console.log(this.state);
+
+    let groupId = null
     add_user_group(this.props.userId, this.state.form)
     .then(resp => {
+
+      groupId = resp.addGroup.id
+
+      this.createGroupFriend(groupId)
+
       this.setState({
         POSTsuccess: true
       })
+    })
+
+  }
+
+  updateFriends = (val) => {
+    this.setState({
+      friends: val
     })
   }
 
@@ -80,10 +123,9 @@ class CreateGroup extends Component {
                 onChange={this.handleInput.bind(this)}
               />
             </div>
-
             <DollarRating handler={this.handlePriceRangeChange.bind(this)}/>
 
-            <AddFriend/>
+            <AddFriend updateFriends={this.updateFriends}/>
 
             <Button
               className="form-submit" disabled={!isEnabled} onClick={this.handleSubmit.bind(this)}>

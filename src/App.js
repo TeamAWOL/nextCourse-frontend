@@ -17,11 +17,11 @@ import Team from './pages/Team';
 import Contact from './pages/Contact';
 
 
-import Game from './pages/Game'
 import Result from './pages/Result'
 
 
 class App extends Component {
+
   render() {
   return (
     <div>
@@ -33,20 +33,18 @@ class App extends Component {
         <Switch>
 
           <Route exact path="/login" component={Login}/>
-          <Route exact path="/logout" render={(props) => <Login logout="YES"/> } />
+          <Route exact path="/logout" render={(props) => <Login logout="YES"/>}/>
           <Route exact path="/sign_up" component={Sign_up}/>} />
           <Route exact path="/CreateGroup" component={CreateGroup}/>} />
           <Route path='/EditGroup/:id' component={EditGroup}/>} />
           <Route exact path="/yelp" component={Yelp}/>} />
           <Route exact path="/feed" component={Feed}/>} />
           <Route exact path="/Result" component={Result}/>} />
-          <Route exact path="/Game" component={Game}/>} />
           <Route exact path="/feed" render={(props) => <Feed />} />
           <Route exact path="/" render={() => (<Redirect to="/login"/>)}/>
           <Route exact path="/about" component={About}/>} />
           <Route exact path="/team" component={Team}/>} />
           <Route exact path="/contact" component={Contact}/>} />
-          <Route exact path="/game" component={Game}/>} />
         </Switch>
       </Router>
 
