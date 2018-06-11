@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import WithAuth from '../api/WithAuth'
+
 import { Table, ListGroupItem, Button } from 'react-bootstrap';
 import { get_user_outings,delete_user_outing } from '../api/OutingAPI'
-import ReactTable from "react-table";
-import 'react-table/react-table.css'
 
 
 class RecentOutings extends Component {
@@ -20,7 +19,6 @@ class RecentOutings extends Component {
       this.setState({
         outings:APIoutings.outings
       })
-      console.log(this.state.outings);
     }
     )
   }

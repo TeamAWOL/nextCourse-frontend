@@ -12,6 +12,17 @@ let get_user_groups = function(userId){
 		})
 }
 
+let get_user_group = function(groupId){
+	console.log("Group ID: " + groupId)
+	return fetch(BASE + '/groups/' + groupId,{
+		method: 'GET'
+		}).then((r) => {
+				let json = r.json()
+				console.log(json)
+				return json
+		})
+}
+
 let add_user_group = function(userId,group){
   console.log("Adding Groups to UserId: " + userId)
   console.log("Input Group Info: " + group.name)
@@ -43,9 +54,9 @@ let delete_user_group = function(groupId) {
 	 })
 }
 
-let update_user_group = function(group) {
-  console.log("Update Group info:" + group.id)
-	return fetch(BASE + '/groups/' + group.id ,{
+let update_user_group = function(group,groupId) {
+  console.log("Update Group info:" + group)
+	return fetch(BASE + '/groups/' + groupId ,{
 		method: 'PATCH',
 		headers: { 'Content-Type': 'application/json'},
 		body: JSON.stringify({
@@ -64,6 +75,7 @@ let update_user_group = function(group) {
 
 export  {
 					 get_user_groups,
+					 get_user_group,
 					 add_user_group,
 					 delete_user_group,
 					 update_user_group,
