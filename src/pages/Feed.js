@@ -27,14 +27,20 @@ class Feed extends Component {
   render() {
     return (
       <div id="feed-page">
-        <div>
-        <Jumbotron id="account-info">Welcome Back {this.state.user.first_name}</Jumbotron>
+      <div className='jumbo'>
+        <Jumbotron>
+        </Jumbotron>
+      </div>
+        <div className='feed-title'>
+        <h1>Welcome Back {this.state.user.first_name}</h1>
         </div>
         <br/>
-        <div id="groups-area" className="col-md-6">
+        <div id="groups-area" className="col-md-12">
           <GroupsTable />
+        <br/>
         </div>
-        <div id="recents-area" className="col-md-6">
+
+        <div id="recents-area" className="col-md-12">
           <RecentOutings />
         </div>
       </div>
