@@ -20,6 +20,7 @@ import Result from './pages/Result'
 
 
 class App extends Component {
+  
   render() {
   return (
     <div>

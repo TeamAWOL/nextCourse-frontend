@@ -13,14 +13,13 @@ import EditGroup from '../pages/EditGroup'
 class GroupsTable extends Component {
   constructor(props){
     super(props)
-    this.handleShow = this.handleShow.bind(this);
+    this.handlePlayClick = this.handlePlayClick.bind(this);
     this.handleHide = this.handleHide.bind(this);
 
     this.state = {
       groups: [],
       show: false,
       redirect: false,
-      groupId: null
     };
   }
 
@@ -34,6 +33,7 @@ class GroupsTable extends Component {
     )
   }
 
+
   handleDeleteClick(e) {
     delete_user_group(e.target.name)
   }
@@ -43,8 +43,16 @@ class GroupsTable extends Component {
     console.log(this.state.groupId);
   }
 
-  handleShow() {
-    this.setState({ show: true });
+  handlePlayClick(e) {
+
+    console.log("######  " + e.target.name)
+
+    this.props.setSelectedGroupId(e.target.name)
+
+    this.setState({
+      show: true
+    });
+
   }
 
   handleHide() {
@@ -102,14 +110,11 @@ class GroupsTable extends Component {
           <Modal.Footer>
             <Button onClick={this.handleHide}>Click for Results</Button>
           </Modal.Footer>
-          {this.state.redirect && <Redirect to={'/Result'}/> }
+          {this.state.redirect && <Redirect to={'/Result'} /> }
         </Modal>
       </div>
     )
   }
-
-
-
 
 }
 export default WithAuth(GroupsTable);
