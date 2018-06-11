@@ -9,3 +9,13 @@ html {
 * {
 font: 24px montserrat;
 }
+
+
+.jumbotron {
+  background: url(../images/friends-cafe.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.9;
+  color: #FF3030;
+ }

@@ -28,7 +28,7 @@ class Feed extends Component {
     return (
       <div id="feed-page">
         <div>
-        <Jumbotron id="account-info">WELCOME BACK {this.state.user.first_name}</Jumbotron>
+        <Jumbotron id="account-info">Welcome Back {this.state.user.first_name}</Jumbotron>
         </div>
         <br/>
         <div id="groups-area" className="col-md-6">
