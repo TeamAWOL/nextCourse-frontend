@@ -6,7 +6,7 @@ import {add_user_group} from '../api/GroupAPI';
 import {add_group_friend} from '../api/FriendAPI'
 import WithAuth from '../api/WithAuth'
 import { Redirect } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
+import { Button, Jumbotron } from 'react-bootstrap'
 
 
 class CreateGroup extends Component {
@@ -99,6 +99,11 @@ class CreateGroup extends Component {
   render() {
     const isEnabled=this.canBeSubmitted()
     return (
+      <div>
+      <div className='jumbo'>
+        <Jumbotron>
+        </Jumbotron>
+      </div>
       <div className="form-body">
         <div className="card">
           <h1>Create a Group</h1>
@@ -132,6 +137,7 @@ class CreateGroup extends Component {
           </form>
           {this.state.POSTsuccess && <Redirect to={"/feed"} /> }
         </div>
+      </div>
       </div>
     );
   }

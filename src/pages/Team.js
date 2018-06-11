@@ -11,16 +11,19 @@ class Team extends Component {
       <div className='team'>
         <div className='jumbo'>
           <Jumbotron>
-            <h1>Team AWOL</h1>
-            <p>
-              Four Bootcamp Students Eating Together
-            </p>
+
         </Jumbotron>
         </div>
-
-        <div>
+        <div className='team-title'>
+        <h1>Team AWOL</h1>
+          <p>
+            Four Bootcamp Students Eating Together
+          </p>
+        </div>
+        <div className='team-body'>
           <CustomTeam />
         </div>
+      
     </div>
     );
   }
