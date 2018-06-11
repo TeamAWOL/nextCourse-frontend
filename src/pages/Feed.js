@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../css/Feed.css';
-import AuthService from '../api/AuthService';
 import WithAuth from '../api/WithAuth';
 import { Jumbotron } from 'react-bootstrap'
 import GroupsTable from '../components/GroupsTable'
@@ -31,10 +30,10 @@ class Feed extends Component {
         <Jumbotron id="account-info">WELCOME BACK {this.state.user.first_name}</Jumbotron>
         </div>
         <br/>
-        <div id="groups-area" className="col-md-6">
+        <div id="groups-area" className="col-md-12">
           <GroupsTable />
         </div>
-        <div id="recents-area" className="col-md-6">
+        <div id="recents-area" className="col-md-12">
           <RecentOutings />
         </div>
       </div>

@@ -39,8 +39,7 @@ class GroupsTable extends Component {
   }
 
   handleEditClick(e) {
-    this.setState({ groupId: e.target.name });
-    console.log(this.state.groupId);
+    this.props.setSelectedGroupId(e.target.name)
   }
 
   handlePlayClick(e) {

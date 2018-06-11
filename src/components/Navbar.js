@@ -10,7 +10,7 @@ class CustomHeader extends React.Component {
         <Navbar  collapseOnSelect>
             <Navbar.Header>
               <Navbar.Brand>
-                <a href='./login'><img id="logo" src={logo} /></a>
+                <a href='./login'><img id="logo" src={logo} alt="logo"/></a>
               </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>

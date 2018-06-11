@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import WithAuth from '../api/WithAuth'
-import { Table, ListGroupItem } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import { get_user_outings } from '../api/OutingAPI'
 
 
@@ -18,7 +18,6 @@ class RecentOutings extends Component {
       this.setState({
         outings:APIoutings.outings
       })
-      console.log(this.state.outings);
     }
     )
   }
