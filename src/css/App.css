@@ -5,3 +5,7 @@
 html {
   margin-bottom: 50px
 }
+
+* {
+font: 24px montserrat;
+}
