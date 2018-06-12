@@ -56,7 +56,7 @@ class RecentOutings extends Component {
                     <td>{outing.winner}</td>
                     <td colSpan="2"><a href={outing.url}>{outing.winning_restaurant}</a></td>
                     <td>{outing.created_at.slice(0,10)}</td>
-                    <td><Button href='../feed' id={outing.id} onClick={this.handleDeleteClick.bind(this)}        bsSize="small" bsStyle="danger">Delete</Button></td>
+                    <td className="centered"><Button href='../feed' id={outing.id} onClick={this.handleDeleteClick.bind(this)} className="centered" bsSize="small" bsStyle="danger"><i className="fas fa-trash-alt"></i></Button></td>
                   </tr>
               )
             })}

@@ -42,3 +42,9 @@ td {
   padding-right: 30px;
   text-align: justify;
 }
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

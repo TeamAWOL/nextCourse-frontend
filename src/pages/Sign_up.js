@@ -10,9 +10,9 @@ class Sign_up extends Component {
     this.state={
       first_name: '',
       last_name: '',
+      email: '',
       zipcode: '',
       dob:'',
-      email: '',
       password: ''
     }
   }
@@ -35,7 +35,21 @@ class Sign_up extends Component {
     .catch(err =>{ alert(err) })
   }
 
+  canBeSubmitted() {
+    let form = this.state
+    return (
+      form.first_name.length > 0 &&
+      form.last_name.length > 0 &&
+      form.email.length > 0 &&
+      form.zipcode > 4 &&
+      form.dob.length > 0 &&
+      form.password.length > 6
+    )
+  }
+
+
   render() {
+    const isEnabled=this.canBeSubmitted()
     return (
       <div className="center">
         <div className="card">
@@ -49,6 +63,7 @@ class Sign_up extends Component {
             name="first_name"
             type="text"
             onChange={this.handleChange.bind(this)}
+            required
           />
 
           <input
@@ -57,15 +72,16 @@ class Sign_up extends Component {
             name="last_name"
             type="text"
             onChange={this.handleChange.bind(this)}
+            required
           />
 
           <input
               className="form-item"
               placeholder="Enter Email"
               name="email"
-              type="text"
+              type="email"
               onChange={this.handleChange.bind(this)}
-
+              required
           />
 
           <input
@@ -74,7 +90,7 @@ class Sign_up extends Component {
               name="zipcode"
               type="text"
               onChange={this.handleChange.bind(this)}
-
+              required
           />
 
           <input
@@ -83,14 +99,16 @@ class Sign_up extends Component {
               name="dob"
               type="date"
               onChange={this.handleChange.bind(this)}
+              required
           />
 
           <input
               className="form-item"
               placeholder="Enter Password"
               name="password"
-              type="Password"
+              type="password"
               onChange={this.handleChange.bind(this)}
+              required
           />
 
           <input
