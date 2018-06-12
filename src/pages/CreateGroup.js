@@ -25,9 +25,9 @@ class CreateGroup extends Component {
 
   handlePriceRangeChange(e){
     let {form} = this.state
-
     form['price_range'] = e
     this.setState({form})
+    console.log(e);
   }
 
   handleInput(e){
@@ -68,15 +68,11 @@ class CreateGroup extends Component {
   }
 
   handleSubmit(e){
-
     let groupId = null
     add_user_group(this.props.userId, this.state.form)
     .then(resp => {
-
       groupId = resp.addGroup.id
-
       this.createGroupFriend(groupId)
-
       this.setState({
         POSTsuccess: true
       })
@@ -92,14 +88,16 @@ class CreateGroup extends Component {
 
   canBeSubmitted() {
     let { form } = this.state
+    console.log(form.price_range);
     return (
       form.name.length > 0 &&
-      form.location.length > 0
+      form.location.length > 0 &&
+      form.price_range
     )
   }
 
   render() {
-    const isEnabled=this.canBeSubmitted();
+    const isEnabled=this.canBeSubmitted()
     return (
       <div>
       <div className='jumbo'>
