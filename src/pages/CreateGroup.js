@@ -99,11 +99,6 @@ class CreateGroup extends Component {
   render() {
     const isEnabled=this.canBeSubmitted()
     return (
-      <div>
-      <div className='jumbo'>
-        <Jumbotron>
-        </Jumbotron>
-      </div>
       <div className="form-body">
         <div className="card">
           <h1>Create a Group</h1>
@@ -138,7 +133,7 @@ class CreateGroup extends Component {
           {this.state.POSTsuccess && <Redirect to={"/feed"} /> }
         </div>
       </div>
-      </div>
+      
     );
   }
 }
