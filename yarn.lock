@@ -6469,6 +6469,16 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-alerts-lite@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-alerts-lite/-/react-alerts-lite-0.3.0.tgz#9b9f2a292e898ad7522e53152906fd1cba58bdf7"
+  dependencies:
+    react-transition-group "^2.2.1"
+
+react-bootstrap-dialog@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/react-bootstrap-dialog/-/react-bootstrap-dialog-0.10.0.tgz#fca5c84804ea2b6debe3833c6d4b7480bcff0175"
+
 react-bootstrap@^0.32.1:
   version "0.32.1"
   resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-0.32.1.tgz#60624c1b48a39d773ef6cce6421a4f33ecc166bb"
@@ -6645,7 +6655,7 @@ react-table@^6.8.6:
   dependencies:
     classnames "^2.2.5"
 
-react-transition-group@^2.0.0, react-transition-group@^2.2.0:
+react-transition-group@^2.0.0, react-transition-group@^2.2.0, react-transition-group@^2.2.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.3.1.tgz#31d611b33e143a5e0f2d94c348e026a0f3b474b6"
   dependencies:

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import '../css/Login.css';
 import AuthService from '../api/AuthService';
-
+import Dialog from 'react-bootstrap-dialog';
+import { AlertProvider } from "react-alerts-lite";
+import { Alerts } from "react-alerts-lite"
+import 'react-alerts-lite/dist/index.min.css';
 
 class Login extends Component {
   constructor(){
@@ -28,9 +31,21 @@ class Login extends Component {
     e.preventDefault()
     this.Auth.login(this.state.email,this.state.password)
     .then(res =>{
+      debugger
       this.props.history.replace('/Feed')
     })
-    .catch(err =>{ alert("Incorrect Email or Password") })
+    .catch(err =>{
+
+      alert("Incorrect Email or Password")
+      //this.dialog.showAlert('Incorrect Email or Password')})
+      // debugger
+      // Alerts.push({
+      //     type: "error",
+      //     position: "top",
+      //     transition: "fade",
+      //     content: "Incorrect Email or Password"
+      //   })
+    })
   }
 
   render() {
@@ -64,7 +79,7 @@ class Login extends Component {
               type="submit"
             />
           </form>
-
+           <AlertProvider theme="rounded"/>
            <a href="/sign_up"> Sign up</a><br />
         </div>
       </div>
