@@ -3,7 +3,6 @@ import '../css/Sign_up.css';
 import AuthService from '../api/AuthService';
 
 class Sign_up extends Component {
-
   constructor(){
     super()
     this.Auth = new AuthService()
