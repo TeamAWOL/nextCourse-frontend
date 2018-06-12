@@ -71,9 +71,9 @@ class GroupsTable extends Component {
               <ListGroupItem className="list-item" key={index}>
                 <h4>{group.name}</h4>
                 <ButtonGroup className="pull-right">
-                  <Button href="../Feed" name={group.id} bsSize="small" bsStyle="danger" onClick={this.handleDeleteClick.bind(this)}>Delete</Button>
-                  <Button href="../EditGroup" name={group.id} bsSize="small" bsStyle="primary" onClick={this.handleEditClick.bind(this)}>Edit</Button>
-                  <Button name={group.id} bsSize="small" bsStyle="success" onClick={this.handlePlayClick.bind(this)}>Play</Button>
+                  <Button href="../Feed" name={group.id} bsSize="small" bsStyle="danger" onClick={this.handleDeleteClick.bind(this)}><i className="fas fa-trash-alt"></i></Button>
+                  <Button href="../EditGroup" name={group.id} bsSize="small" bsStyle="primary" onClick={this.handleEditClick.bind(this)}><i className="fas fa-edit"></i></Button>
+                  <Button name={group.id} bsSize="small" bsStyle="success" onClick={this.handlePlayClick.bind(this)}><i className="fas fa-play"></i></Button>
                 </ButtonGroup>
               </ListGroupItem>
             )
