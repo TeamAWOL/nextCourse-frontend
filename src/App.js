@@ -11,6 +11,7 @@ import EditGroup from './pages/EditGroup'
 import Yelp from './pages/YelpAPITest'
 import Feed from './pages/Feed'
 
+
 import About from './pages/About';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
@@ -20,7 +21,7 @@ import Result from './pages/Result'
 
 
 class App extends Component {
-  
+
   render() {
   return (
     <div>
@@ -35,11 +36,10 @@ class App extends Component {
           <Route exact path="/logout" render={(props) => <Login logout="YES"/>}/>
           <Route exact path="/sign_up" component={Sign_up}/>} />
           <Route exact path="/CreateGroup" component={CreateGroup}/>} />
-          <Route path='/EditGroup/:id' component={EditGroup}/>} />
+          <Route path={'/EditGroup'} component={EditGroup}/>} />
           <Route exact path="/yelp" component={Yelp}/>} />
           <Route exact path="/feed" component={Feed}/>} />
           <Route exact path="/Result" component={Result}/>} />
-          <Route exact path="/feed" render={(props) => <Feed />} />
           <Route exact path="/" render={() => (<Redirect to="/login"/>)}/>
           <Route exact path="/about" component={About}/>} />
           <Route exact path="/team" component={Team}/>} />

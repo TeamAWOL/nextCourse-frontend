@@ -54,9 +54,9 @@ let delete_user_group = function(groupId) {
 	 })
 }
 
-let update_user_group = function(group) {
-  console.log("Update Group info:" + group.id)
-	return fetch(BASE + '/groups/' + group.id ,{
+let update_user_group = function(group,groupId) {
+  console.log("Update Group info:" + group)
+	return fetch(BASE + '/groups/' + groupId ,{
 		method: 'PATCH',
 		headers: { 'Content-Type': 'application/json'},
 		body: JSON.stringify({

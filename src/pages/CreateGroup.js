@@ -6,7 +6,7 @@ import {add_user_group} from '../api/GroupAPI';
 import {add_group_friend} from '../api/FriendAPI'
 import WithAuth from '../api/WithAuth'
 import { Redirect } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
+import { Button, Jumbotron } from 'react-bootstrap'
 
 
 class CreateGroup extends Component {
@@ -25,9 +25,9 @@ class CreateGroup extends Component {
 
   handlePriceRangeChange(e){
     let {form} = this.state
-
     form['price_range'] = e
     this.setState({form})
+    console.log(e);
   }
 
   handleInput(e){
@@ -68,15 +68,11 @@ class CreateGroup extends Component {
   }
 
   handleSubmit(e){
-
     let groupId = null
     add_user_group(this.props.userId, this.state.form)
     .then(resp => {
-
       groupId = resp.addGroup.id
-
       this.createGroupFriend(groupId)
-
       this.setState({
         POSTsuccess: true
       })
@@ -92,14 +88,16 @@ class CreateGroup extends Component {
 
   canBeSubmitted() {
     let { form } = this.state
+    console.log(form.price_range);
     return (
       form.name.length > 0 &&
-      form.location.length > 0
+      form.location.length > 0 &&
+      form.price_range
     )
   }
 
   render() {
-    const isEnabled=this.canBeSubmitted();
+    const isEnabled=this.canBeSubmitted()
     return (
       <div className="form-body">
         <div className="card">
@@ -135,6 +133,7 @@ class CreateGroup extends Component {
           {this.state.POSTsuccess && <Redirect to={"/feed"} /> }
         </div>
       </div>
+      
     );
   }
 }

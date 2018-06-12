@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import '../css/Modal.css';
 import WithAuth from '../api/WithAuth'
 import { Button, ButtonGroup, Grid, Col, Row, ListGroup, ListGroupItem, Modal } from 'react-bootstrap'
+import { BrowserRouter as Router, Route, Redirect, Link} from 'react-router-dom';
 import { get_user_groups, delete_user_group } from '../api/GroupAPI'
-import { Link, Redirect } from 'react-router-dom'
+import EditGroup from '../pages/EditGroup'
+
 
 
 
@@ -36,10 +38,12 @@ class GroupsTable extends Component {
     delete_user_group(e.target.name)
   }
 
+  handleEditClick(e) {
+    this.props.setSelectedGroupId(e.target.name)
+  }
+
   handlePlayClick(e) {
-
     console.log("######  " + e.target.name)
-
     this.props.setSelectedGroupId(e.target.name)
 
     this.setState({
@@ -65,9 +69,9 @@ class GroupsTable extends Component {
               <ListGroupItem className="list-item" key={index}>
                 <h4>{group.name}</h4>
                 <ButtonGroup className="pull-right">
-                  <Button href="../Feed" name={group.id} onClick={this.handleDeleteClick.bind(this)} bsSize="small" bsStyle="danger">Delete</Button>
-                  <Link to={`/EditGroup/${group.name}`}><Button className="pull-left" bsSize="small" bsStyle="primary">Edit</Button></Link>
-                  <Button id="play_text" bsSize="small" name={group.id} bsStyle="success" onClick={this.handlePlayClick.bind(this)}>Play</Button>
+                  <Button href="../Feed" name={group.id} bsSize="small" bsStyle="danger" onClick={this.handleDeleteClick.bind(this)}>Delete</Button>
+                  <Button href="../EditGroup" name={group.id} bsSize="small" bsStyle="primary" onClick={this.handleEditClick.bind(this)}>Edit</Button>
+                  <Button name={group.id} bsSize="small" bsStyle="success" onClick={this.handlePlayClick.bind(this)}>Play</Button>
                 </ButtonGroup>
               </ListGroupItem>
             )
@@ -105,54 +109,3 @@ class GroupsTable extends Component {
 
 }
 export default WithAuth(GroupsTable);
-
-
-
-
-// class GroupsTable extends Component {
-//
-//   render() {
-//     return (
-//       <div>
-//         <h1><strong>Groups</strong></h1><hr/>
-//         <ul className="list-group">
-//           <li className="list-group-item">
-//             <span>Family</span>
-//             <ButtonGroup className="pull-right">
-//               <Button bsStyle="success">Play</Button>
-//               <Button bsStyle="primary">Edit</Button>
-//               <Button bsStyle="danger">Delete</Button>
-//             </ButtonGroup>
-//           </li>
-//           <li class="list-group-item">
-//             <span>Work Friends</span>
-//             <ButtonGroup className="pull-right" bsSize="small">
-//               <Button bsStyle="success">Play</Button>
-//               <Button bsStyle="primary">Edit</Button>
-//               <Button bsStyle="danger">Delete</Button>
-//             </ButtonGroup>
-//           </li>
-//           <li class="list-group-item"><span>Poker Buds</span>
-//             <ButtonGroup className="pull-right" bsSize="small">
-//               <Button bsStyle="success">Play</Button>
-//               <Button bsStyle="primary">Edit</Button>
-//               <Button bsStyle="danger">Delete</Button>
-//             </ButtonGroup>
-//           </li>
-//           <li class="list-group-item"><span>Golf Pals</span>
-//             <ButtonGroup className="pull-right" bsSize="small">
-//               <Button href="../Login" bsStyle="success">Play</Button>
-//               <Button bsStyle="primary">Edit</Button>
-//               <Button bsStyle="danger">Delete</Button>
-//             </ButtonGroup>
-//           </li>
-//         </ul>
-//       </div>
-//     )
-//   }
-//
-//
-//
-//
-// }
-// export default GroupsTable;

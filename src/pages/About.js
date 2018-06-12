@@ -10,13 +10,15 @@ class About extends Component {
       <div className='about'>
         <div className='jumbo'>
           <Jumbotron>
-            <h1>The Feed Me Story</h1>
-            <p>
-              Four Friends Wanted to Make Restaurant Selections Easier
-            </p>
-        </Jumbotron>
+          </Jumbotron>
         </div>
 
+        <div className="about-title">
+          <h1>The Feed Me Story</h1>
+        <p>
+          Four Foodies Wanted to Make Restaurant Selections Easier
+        </p>
+        </div>
         <div className='about-body'>
           <p>
             <h3> Welcome fellow foodie -- we are glad you decided to check us out!</h3>

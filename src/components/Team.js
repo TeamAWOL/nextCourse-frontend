@@ -14,26 +14,27 @@ class CustomTeam extends Component {
       <div className="team-page">
         <Grid>
           <Row>
-            <Col xs={4} md={2}>
+            <Col xs={6} md={2}>
               <Thumbnail src= { Damon } alt="Damon Brown">
                 <h3>Damon Brown</h3>
                 <p>Co-Founder</p>
               </Thumbnail>
             </Col>
-            <Col xs={4} md={2}>
+            <Col xs={6} md={2}>
               <Thumbnail src= { Mondo } alt="Armando Nunez">
                 <h3>Armando Nunez</h3>
-                <p>CODE MASTA</p>
+                <p>Co-Founder</p>
               </Thumbnail>
             </Col>
-            <Col xs={4} md={2}>
+            <Col xs={6} md={2}>
               <Thumbnail src={ Steve } alt="Steven Hong">
-                <h3>Steven Hong</h3>
+                <h3>Steven
+                <br/> Hong</h3>
                 <p>Co-Founder</p>
               </Thumbnail>
             </Col>
 
-            <Col xs={4} md={2}>
+            <Col xs={6} md={2}>
               <Thumbnail src={ David } alt="David Yi">
                 <h3>David
                 <br/> Yi</h3>
