@@ -30,7 +30,7 @@ class Login extends Component {
     .then(res =>{
       this.props.history.replace('/Feed')
     })
-    .catch(err =>{ alert(err) })
+    .catch(err =>{ alert("Incorrect Email or Password") })
   }
 
   render() {
