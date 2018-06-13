@@ -33,15 +33,14 @@ class EditGroup extends Component {
       this.setState({
         group:APIgroupinfo.group
       })
-    }
-    )
+    })
+
     get_group_friends(this.props.groupId)
     .then(APIgroupfriends=> {
       this.setState({
         friends:APIgroupfriends.friends
       })
-    }
-    )
+    })
   }
 
   handlePriceRangeChange(e){

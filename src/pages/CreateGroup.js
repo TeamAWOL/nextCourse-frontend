@@ -77,7 +77,6 @@ class CreateGroup extends Component {
         POSTsuccess: true
       })
     })
-
   }
 
   updateFriends = (val) => {

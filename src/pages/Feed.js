@@ -20,9 +20,9 @@ class Feed extends Component {
       this.setState({
         user:APIuser.user
       })
-    }
-    )
+    })
   }
+  
   render() {
     return (
       <div id="feed-page">

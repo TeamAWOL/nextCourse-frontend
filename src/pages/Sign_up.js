@@ -75,45 +75,45 @@ class Sign_up extends Component {
           />
 
           <input
-              className="form-item"
-              placeholder="Enter Email"
-              name="email"
-              type="email"
-              onChange={this.handleChange.bind(this)}
-              required
+            className="form-item"
+            placeholder="Enter Email"
+            name="email"
+            type="email"
+            onChange={this.handleChange.bind(this)}
+            required
           />
 
           <input
-              className="form-item"
-              placeholder="Enter Zipcode"
-              name="zipcode"
-              type="text"
-              onChange={this.handleChange.bind(this)}
-              required
+            className="form-item"
+            placeholder="Enter Zipcode"
+            name="zipcode"
+            type="text"
+            onChange={this.handleChange.bind(this)}
+            required
           />
 
           <input
-              className="form-item"
-              placeholder="Enter DOB"
-              name="dob"
-              type="date"
-              onChange={this.handleChange.bind(this)}
-              required
+            className="form-item"
+            placeholder="Enter DOB"
+            name="dob"
+            type="date"
+            onChange={this.handleChange.bind(this)}
+            required
           />
 
           <input
-              className="form-item"
-              placeholder="Enter Password"
-              name="password"
-              type="password"
-              onChange={this.handleChange.bind(this)}
-              required
+            className="form-item"
+            placeholder="Enter Password"
+            name="password"
+            type="password"
+            onChange={this.handleChange.bind(this)}
+            required
           />
 
           <input
-              className="form-submit"
-              value="Submit"
-              type="submit"
+            className="form-submit"
+            value="Submit"
+            type="submit"
           />
 
           </form>
