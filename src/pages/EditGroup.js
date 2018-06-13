@@ -12,8 +12,6 @@ import { Button } from 'react-bootstrap'
 class EditGroup extends Component {
   constructor(props){
     super(props)
-
-
     this.state={
       form: {
         id:this.props.groupId,
@@ -110,7 +108,7 @@ class EditGroup extends Component {
                     defaultValue={friend.email}
                     placeholder="Email"
                     name="email"
-                    type="text"
+                    type="email"
                     id="friend"
                   />
                   <input
@@ -128,7 +126,7 @@ class EditGroup extends Component {
             <AddFriend updateFriends={this.updateFriends}/>
             <Button
               className="form-submit" onClick={this.handleSubmit.bind(this)}>
-              Submit
+              Update
             </Button>
           </form>
           {this.state.POSTsuccess && <Redirect to={"/feed"} /> }

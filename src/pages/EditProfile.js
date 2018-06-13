@@ -2,68 +2,55 @@ import React, { Component } from 'react'
 import '../css/Sign_up.css'
 import AuthService from '../api/AuthService'
 import WithAuth from '../api/WithAuth'
-import {get_user, delete_user, update_user} from '../api/UserAPI'
+import { get_user, update_user } from '../api/UserAPI'
 import { Button } from 'react-bootstrap'
 import { Redirect } from 'react-router-dom'
 
 class EditProfile extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.Auth = new AuthService()
     this.state={
-      initialForm: {
+      user: {
+        id: '',
         first_name: '',
         last_name: '',
         email: '',
         zipcode: '',
         dob:'',
         password: ''
-      }
+      }, newUser: {}
     }
   }
 
   handleChange(e){
-    this.setState({ [e.target.name]:
+    this.setState({ newUser.[e.target.name]:
     e.target.value })
   }
 
   handleFormSubmit(e){
     e.preventDefault()
-    this.Auth.create(this.state.first_name,
-                     this.state.last_name,
-                     this.state.email,
-                     this.state.zipcode,
-                     this.state.dob,
-                     this.state.password)
+    debugger
+    update_user(this.state.user)
     .then(res =>{
       this.props.history.replace('/Feed')
     })
     .catch(err =>{ alert(err) })
   }
 
-  canBeSubmitted() {
-    let form = this.state
-    return (
-      form.first_name.length > 0 &&
-      form.last_name.length > 0 &&
-      form.email.length > 0 &&
-      form.zipcode > 4 &&
-      form.dob.length > 0 &&
-      form.password.length > 6
-    )
-  }
 
   componentWillMount() {
     get_user(this.props.userId)
     .then(APIuserinfo => {
       this.setState({
-        initialForm:APIuserinfo.user
+        user: APIuserinfo.user,
+        id: this.props.userId
       })
+
     })
   }
 
   render() {
-    const isEnabled=this.canBeSubmitted()
     return (
       <div className="center">
         <div className="card">
@@ -77,7 +64,7 @@ class EditProfile extends Component {
             name="first_name"
             type="text"
             onChange={this.handleChange.bind(this)}
-            required
+
           />
 
           <input
@@ -86,7 +73,6 @@ class EditProfile extends Component {
             name="last_name"
             type="text"
             onChange={this.handleChange.bind(this)}
-            required
           />
 
           <input
@@ -95,7 +81,6 @@ class EditProfile extends Component {
             name="email"
             type="email"
             onChange={this.handleChange.bind(this)}
-            required
           />
 
           <input
@@ -104,7 +89,6 @@ class EditProfile extends Component {
             name="zipcode"
             type="text"
             onChange={this.handleChange.bind(this)}
-            required
           />
 
           <input
@@ -113,16 +97,14 @@ class EditProfile extends Component {
             name="dob"
             type="date"
             onChange={this.handleChange.bind(this)}
-            required
           />
 
           <input
             className="form-item"
-            placeholder="password"
+            placeholder={this.state.user.password}
             name="password"
             type="password"
             onChange={this.handleChange.bind(this)}
-            required
           />
 
           <input
