@@ -46,7 +46,7 @@ class Result extends Component {
     return (
         <div>
 		        <h1 id="result-head"> {this.state.result.name} </h1>
-		        <div id="info-section" className="col-md-6 pull-left">
+		        <div id="info-section" className="col-xs-6 pull-left">
 			        <br/>
 			         Price: {this.state.result.price}
 			        <br/>
@@ -58,7 +58,7 @@ class Result extends Component {
 		          <img id="pic-section" src={this.state.result.image_url} /><br/>
 							View on <a href={this.state.result.url} > yelp </a>
 						</div>
-						<div id="map-section" className="col-md-6">
+						<div id="map-section" className="col-xs-6">
 		        {this.state.lng &&
 		          <MapContainer lng={this.state.lng} lat={this.state.lat}/>
 		        }

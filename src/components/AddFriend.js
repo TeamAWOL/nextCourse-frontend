@@ -147,7 +147,7 @@ class AddFriend extends Component {
                   />
                   <input
                     className="form-item"
-                    placeholder="Food Preference"
+                    placeholder="Food Choice"
                     name="preference"
                     type="text"
                     id="friend"
@@ -175,7 +175,7 @@ class AddFriend extends Component {
                       />
                       <input
                         className="form-item"
-                        placeholder="Food Preference"
+                        placeholder="Food Choice"
                         name="preference"
                         type="text"
                         id={`friend${i}`}
