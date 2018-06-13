@@ -131,7 +131,7 @@ class AddFriend extends Component {
                 <form id="dynamic-form">
                   <input
                     className="form-item"
-                    placeholder="Friend's Name"
+                    placeholder="Player's Name"
                     name="name"
                     type="text"
                     id="friend"
@@ -139,7 +139,7 @@ class AddFriend extends Component {
                   />
                   <input
                     className="form-item"
-                    placeholder="Friend's Email"
+                    placeholder="Player's Email"
                     name="email"
                     type="text"
                     id="friend"
@@ -159,7 +159,7 @@ class AddFriend extends Component {
                     <div key={`friend${i}`}>
                       <input
                         className="form-item"
-                        placeholder="Friend's Name"
+                        placeholder="Player's Name"
                         name="name"
                         type="text"
                         id={`friend${i}`}
@@ -167,7 +167,7 @@ class AddFriend extends Component {
                       />
                       <input
                         className="form-item"
-                        placeholder="Friend's Email"
+                        placeholder="Player's Email"
                         name="email"
                         type="text"
                         id={`friend${i}`}
